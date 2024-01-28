@@ -60,6 +60,7 @@ func mirror_rotation(mirror_goose: Node2D) -> void:
 
 ## 复制操作时保存左边部分
 func save_left_body() -> void:
+	count_mark(get_node("left_background/player_goose"))
 	# 将两个背景clip模式变成clip_only，并将镜像角色加入到右侧背景下
 	get_node("left_background").clip_children = CanvasItem.CLIP_CHILDREN_ONLY
 	generate_right_background()
@@ -94,6 +95,7 @@ func add_new_player_goose() -> void:
 	player_goose.name = "Goose"
 	player_goose.set_script(load("res://Entitise/goose.gd"))
 	player_goose.position = Vector2(1555, 848) - Vector2(860, 880) - Vector2(1000, 0)
+	player_goose.position = $TextureRect.size / 2
 	
 	var r1 = load("res://MianScenes/mirror/right_bg_packed.tscn").instantiate()
 	r1.get_child(0).set_script(null)
@@ -106,3 +108,21 @@ func add_new_player_goose() -> void:
 	begin_syn_rotation = false
 	$"../../..".add_child(player_goose)
 	$"../../../Camera2D".position.x = 0
+
+## 但在点击按钮前触发，减过轴向的肢体数量，没过的双倍
+func count_mark(player_goose: Node2D) -> void:
+	for child in player_goose.get_children():
+		if child.name == "body":
+			pass
+		else:
+			if child.get_node("Marker2D") != null:
+				if child.get_node("Marker2D").global_position.x > 2877:
+					var type = child.get_groups()[0]
+					$"../../..".mark[type] -= 1
+					$"../../../UI/VBoxContainer".update($"../../..".mark.values())
+				else:
+					var type = child.get_groups()[0]
+					$"../../..".mark[type] += 1
+					$"../../../UI/VBoxContainer".update($"../../..".mark.values())
+			else:
+				print(str(child) + "的Marker2D不存在")

@@ -44,6 +44,8 @@ func add_limbs() -> void:
 	# 角度后面再细调
 	if add_limb != null:
 		add_limb.rotation = direction.angle() + PI / 2
+		$"..".mark[add_limb.get_groups()[0]] += 1
+		$"../UI/VBoxContainer".update($"..".mark.values())
 		goose.add_child(add_limb)
 
 func _process(delta: float) -> void:
@@ -85,5 +87,5 @@ func _on_roll_pressed() -> void:
 func _on_alright_pressed() -> void:
 	selected = false
 	added = false
-	if select_limb != null:
+	for gooseChild in goose.get_children():
 		select_limb.modulate = Color(1,1,1)

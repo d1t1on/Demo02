@@ -64,7 +64,7 @@ animations = [{
 radius = 23.0
 height = 174.0
 
-[node name="head" type="Node2D"]
+[node name="head" type="Node2D" groups=["head"]]
 script = ExtResource("1_4diar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -80,3 +80,6 @@ offset = Vector2(-75, -75)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-63, -75)
 shape = SubResource("CapsuleShape2D_u4f64")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-63, -75)

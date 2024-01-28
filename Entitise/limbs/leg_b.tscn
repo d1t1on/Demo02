@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn6dxhiv1xmhc"]
+[gd_scene load_steps=17 format=3 uid="uid://bn6dxhiv1xmhc"]
 
 [ext_resource type="Texture2D" uid="uid://cpbel1j4ljab4" path="res://Resource/GooseAniamtion/move_legF/move_legF_00.png" id="1_8di7a"]
 [ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_fq54u"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://5q7wrr8p130" path="res://Resource/GooseAniamtion/move_legF/move_legF_07.png" id="8_f57qg"]
 [ext_resource type="Texture2D" uid="uid://dpn640sih5p6i" path="res://Resource/GooseAniamtion/move_legF/move_legF_08.png" id="9_y2e6l"]
 [ext_resource type="Texture2D" uid="uid://ppktl3p2vqhy" path="res://Resource/GooseAniamtion/move_legF/move_legF_09.png" id="10_bja5e"]
+[ext_resource type="Script" path="res://Entitise/limbs/MarkerPoint.gd" id="14_5m5ng"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yfdm"]
 animations = [{
@@ -64,7 +65,7 @@ animations = [{
 radius = 26.0
 height = 108.0
 
-[node name="leg_b" type="Node2D"]
+[node name="leg_b" type="Node2D" groups=["leg"]]
 script = ExtResource("1_fq54u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -80,3 +81,7 @@ offset = Vector2(-5, 61)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 67)
 shape = SubResource("CapsuleShape2D_2cwof")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 66)
+script = ExtResource("14_5m5ng")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhy03vtpl40n6"]
+[gd_scene load_steps=31 format=3 uid="uid://dhy03vtpl40n6"]
 
 [ext_resource type="Texture2D" uid="uid://cyiemkh1v8jxn" path="res://Resource/MianScene/背景.png" id="1_p3ufo"]
 [ext_resource type="Script" path="res://MianScenes/playing.gd" id="1_u5ftt"]
 [ext_resource type="Texture2D" uid="uid://bcanjhww87cba" path="res://Resource/MianScene/car.png" id="2_m0i68"]
+[ext_resource type="Script" path="res://Entitise/Controls/mark_uigd.gd" id="2_nqxq7"]
 [ext_resource type="Texture2D" uid="uid://ctj2udx1jqb7f" path="res://Resource/MianScene/翻转.png" id="3_ilcoi"]
 [ext_resource type="Texture2D" uid="uid://4vcbpimgm1oa" path="res://Resource/MianScene/选区.png" id="4_rbtg7"]
 [ext_resource type="PackedScene" uid="uid://rk254cxu2sr0" path="res://Entitise/goose.tscn" id="6_i3tfu"]
@@ -51,6 +52,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
 theme_override_constants/separation = 10
+script = ExtResource("2_nqxq7")
 
 [node name="HeadNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
@@ -61,8 +63,9 @@ texture = ExtResource("7_a33n8")
 
 [node name="Label" type="Label" parent="UI/VBoxContainer/HeadNumber"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "     X 20"
+text = "     X 1"
 
 [node name="WingNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
@@ -73,8 +76,9 @@ texture = ExtResource("8_g1vf6")
 
 [node name="Label" type="Label" parent="UI/VBoxContainer/WingNumber"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "X 90"
+text = "X 2"
 
 [node name="LegNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
@@ -85,8 +89,9 @@ texture = ExtResource("9_fw7rj")
 
 [node name="Label" type="Label" parent="UI/VBoxContainer/LegNumber"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "        X 20"
+text = "        X 2"
 
 [node name="orignalPoint" type="Marker2D" parent="."]
 position = Vector2(1633, 812)
@@ -135,7 +140,6 @@ position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_ky5lb")
 
 [node name="Goose" parent="." instance=ExtResource("6_i3tfu")]
-z_index = 2
 position = Vector2(1639, 814)
 
 [node name="Reverse" type="Node2D" parent="."]

@@ -1,88 +1,89 @@
-[gd_scene load_steps=90 format=3]
+[gd_scene load_steps=91 format=3]
 
-[ext_resource type="Texture2D" path="res://MianScenes/mirror/蒙版.png" id="1_3q7yd"]
-[ext_resource type="PackedScene" path="res://Entitise/temp_resource/temp_goose.tscn" id="2_q1gx6"]
-[ext_resource type="Script" path="res://Entitise/goose.gd" id="3_w43dq"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/wing_b.tscn" id="4_kl407"]
-[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="5_g6a26"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/wing_B.png" id="6_bdayr"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/空白图片.png" id="7_mwkjv"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_00.png" id="8_jdmhu"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_01.png" id="9_fs6gs"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_02.png" id="10_as44o"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_03.png" id="11_du832"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_04.png" id="12_punen"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_05.png" id="13_jfags"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_06.png" id="14_8lpms"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_07.png" id="15_raxxu"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_08.png" id="16_1578e"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_09.png" id="17_7l143"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/leg_b.tscn" id="18_bhnv2"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/leg_B.png" id="19_7b2lv"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_00.png" id="20_3qv4e"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_01.png" id="21_888uw"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_02.png" id="22_1k66y"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_03.png" id="23_oa1ax"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_04.png" id="24_87m15"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_05.png" id="25_d544q"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_06.png" id="26_ce4g8"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_07.png" id="27_imxnp"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_08.png" id="28_qmtxr"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_09.png" id="29_h3cby"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/body.tscn" id="30_fsc0p"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/body.png" id="31_jveaw"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_00.png" id="32_jjyka"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_01.png" id="33_0gl3f"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_02.png" id="34_3hqhv"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_03.png" id="35_ootl5"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_04.png" id="36_b1os8"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_05.png" id="37_c5mnd"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_06.png" id="38_gsf3f"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_07.png" id="39_n7eep"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_08.png" id="40_j4msi"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_09.png" id="41_cfu65"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/head.tscn" id="42_naxkw"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/head.png" id="43_dptjv"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_00.png" id="44_36upo"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_01.png" id="45_66aaj"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_02.png" id="46_alj8e"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_03.png" id="47_arh2e"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_04.png" id="48_mkar5"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_05.png" id="49_euf72"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_06.png" id="50_3rvgg"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_07.png" id="51_1b5oa"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_08.png" id="52_hnhj4"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_09.png" id="53_2i4wb"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/wing_f.tscn" id="54_plojr"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/wings_F.png" id="55_blp0b"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_00.png" id="56_6miys"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_01.png" id="57_or62g"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_02.png" id="58_gr0pm"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_03.png" id="59_bn47i"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_04.png" id="60_qi5sj"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_05.png" id="61_5h76s"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_06.png" id="62_x6bkd"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_07.png" id="63_00o14"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_08.png" id="64_3c5yx"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_09.png" id="65_unsdq"]
-[ext_resource type="PackedScene" path="res://Entitise/limbs/leg_f.tscn" id="66_lagtb"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="67_0l7jh"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_00.png" id="68_ft5dg"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_01.png" id="69_cgl1i"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_02.png" id="70_52q8w"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_03.png" id="71_gie56"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_04.png" id="72_28tkk"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_05.png" id="73_wvovu"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_06.png" id="74_xt7lf"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_07.png" id="75_ot5sy"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_08.png" id="76_fir4u"]
-[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_09.png" id="77_brwh4"]
+[ext_resource type="Texture2D" path="res://MianScenes/mirror/蒙版.png" id="1_txsn8"]
+[ext_resource type="PackedScene" path="res://Entitise/temp_resource/temp_goose.tscn" id="2_jlnl0"]
+[ext_resource type="Script" path="res://Entitise/goose.gd" id="3_j5yow"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/wing_b.tscn" id="4_ntehr"]
+[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="5_riag5"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/wing_B.png" id="6_q40pb"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/空白图片.png" id="7_5rwu2"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_00.png" id="8_p5jfw"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_01.png" id="9_emvaw"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_02.png" id="10_d4ed0"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_03.png" id="11_mm3n6"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_04.png" id="12_372n8"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_05.png" id="13_qa8v0"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_06.png" id="14_o6elw"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_07.png" id="15_lsatk"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_08.png" id="16_ao3u0"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_09.png" id="17_kbikf"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/leg_b.tscn" id="18_vsnd8"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/leg_B.png" id="19_78rp8"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_00.png" id="20_sb4y4"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_01.png" id="21_h4xrk"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_02.png" id="22_4ui0x"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_03.png" id="23_e1aym"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_04.png" id="24_ucj87"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_05.png" id="25_avuyh"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_06.png" id="26_apk18"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_07.png" id="27_qejpx"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_08.png" id="28_3l7c1"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legF/move_legF_09.png" id="29_p31ol"]
+[ext_resource type="Script" path="res://Entitise/limbs/MarkerPoint.gd" id="30_b8xao"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/body.tscn" id="31_maa0b"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/body.png" id="32_f8n3v"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_00.png" id="33_p2f2k"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_01.png" id="34_v8pog"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_02.png" id="35_u7b2u"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_03.png" id="36_47oco"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_04.png" id="37_o4o15"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_05.png" id="38_gsrdk"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_06.png" id="39_ukcht"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_07.png" id="40_jahte"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_08.png" id="41_4rtvl"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ body/move_body_09.png" id="42_7samx"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/head.tscn" id="43_me7l1"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/head.png" id="44_yerxj"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_00.png" id="45_1h58e"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_01.png" id="46_b4pbf"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_02.png" id="47_ekb2h"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_03.png" id="48_426qr"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_04.png" id="49_o64nw"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_05.png" id="50_7ahp7"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_06.png" id="51_dws8q"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_07.png" id="52_r7tl8"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_08.png" id="53_go3rj"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_ head/move_head_09.png" id="54_e76me"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/wing_f.tscn" id="55_sm3uu"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/wings_F.png" id="56_hewj5"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_00.png" id="57_auh3e"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_01.png" id="58_wt6hg"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_02.png" id="59_4bs5s"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_03.png" id="60_pde7t"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_04.png" id="61_vuowk"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_05.png" id="62_nxp35"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_06.png" id="63_7et7b"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_07.png" id="64_7j6dv"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_08.png" id="65_30ukx"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_09.png" id="66_p4kp7"]
+[ext_resource type="PackedScene" path="res://Entitise/limbs/leg_f.tscn" id="67_p141i"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="68_h1aos"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_00.png" id="69_hp4a4"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_01.png" id="70_l85qy"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_02.png" id="71_r82oy"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_03.png" id="72_dfeya"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_04.png" id="73_ybmce"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_05.png" id="74_g5cmc"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_06.png" id="75_hvthy"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_07.png" id="76_kcf1w"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_08.png" id="77_1pelb"]
+[ext_resource type="Texture2D" path="res://Resource/GooseAniamtion/move_legB/move_legB_09.png" id="78_lleum"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xrp5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -90,34 +91,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_jdmhu")
+"texture": ExtResource("8_p5jfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_fs6gs")
+"texture": ExtResource("9_emvaw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_as44o")
+"texture": ExtResource("10_d4ed0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_du832")
+"texture": ExtResource("11_mm3n6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_punen")
+"texture": ExtResource("12_372n8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jfags")
+"texture": ExtResource("13_qa8v0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_8lpms")
+"texture": ExtResource("14_o6elw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_raxxu")
+"texture": ExtResource("15_lsatk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_1578e")
+"texture": ExtResource("16_ao3u0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_7l143")
+"texture": ExtResource("17_kbikf")
 }],
 "loop": true,
 "name": &"move",
@@ -132,7 +133,7 @@ height = 137.535
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -140,34 +141,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_3qv4e")
+"texture": ExtResource("20_sb4y4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_888uw")
+"texture": ExtResource("21_h4xrk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_1k66y")
+"texture": ExtResource("22_4ui0x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_oa1ax")
+"texture": ExtResource("23_e1aym")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_87m15")
+"texture": ExtResource("24_ucj87")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_d544q")
+"texture": ExtResource("25_avuyh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_ce4g8")
+"texture": ExtResource("26_apk18")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_imxnp")
+"texture": ExtResource("27_qejpx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_qmtxr")
+"texture": ExtResource("28_3l7c1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_h3cby")
+"texture": ExtResource("29_p31ol")
 }],
 "loop": true,
 "name": &"move",
@@ -182,7 +183,7 @@ height = 108.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -190,34 +191,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_jjyka")
+"texture": ExtResource("33_p2f2k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_0gl3f")
+"texture": ExtResource("34_v8pog")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_3hqhv")
+"texture": ExtResource("35_u7b2u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_ootl5")
+"texture": ExtResource("36_47oco")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_b1os8")
+"texture": ExtResource("37_o4o15")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_c5mnd")
+"texture": ExtResource("38_gsrdk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_gsf3f")
+"texture": ExtResource("39_ukcht")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_n7eep")
+"texture": ExtResource("40_jahte")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_j4msi")
+"texture": ExtResource("41_4rtvl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_cfu65")
+"texture": ExtResource("42_7samx")
 }],
 "loop": true,
 "name": &"move",
@@ -232,7 +233,7 @@ height = 144.938
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -240,34 +241,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("44_36upo")
+"texture": ExtResource("45_1h58e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_66aaj")
+"texture": ExtResource("46_b4pbf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_alj8e")
+"texture": ExtResource("47_ekb2h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_arh2e")
+"texture": ExtResource("48_426qr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_mkar5")
+"texture": ExtResource("49_o64nw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_euf72")
+"texture": ExtResource("50_7ahp7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_3rvgg")
+"texture": ExtResource("51_dws8q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_1b5oa")
+"texture": ExtResource("52_r7tl8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_hnhj4")
+"texture": ExtResource("53_go3rj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("53_2i4wb")
+"texture": ExtResource("54_e76me")
 }],
 "loop": true,
 "name": &"move",
@@ -282,7 +283,7 @@ height = 174.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -290,34 +291,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("56_6miys")
+"texture": ExtResource("57_auh3e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_or62g")
+"texture": ExtResource("58_wt6hg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_gr0pm")
+"texture": ExtResource("59_4bs5s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_bn47i")
+"texture": ExtResource("60_pde7t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("60_qi5sj")
+"texture": ExtResource("61_vuowk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("61_5h76s")
+"texture": ExtResource("62_nxp35")
 }, {
 "duration": 1.0,
-"texture": ExtResource("62_x6bkd")
+"texture": ExtResource("63_7et7b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_00o14")
+"texture": ExtResource("64_7j6dv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("64_3c5yx")
+"texture": ExtResource("65_30ukx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("65_unsdq")
+"texture": ExtResource("66_p4kp7")
 }],
 "loop": true,
 "name": &"move",
@@ -332,7 +333,7 @@ height = 173.647
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_mwkjv")
+"texture": ExtResource("7_5rwu2")
 }],
 "loop": true,
 "name": &"default",
@@ -340,34 +341,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("68_ft5dg")
+"texture": ExtResource("69_hp4a4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("69_cgl1i")
+"texture": ExtResource("70_l85qy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("70_52q8w")
+"texture": ExtResource("71_r82oy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("71_gie56")
+"texture": ExtResource("72_dfeya")
 }, {
 "duration": 1.0,
-"texture": ExtResource("72_28tkk")
+"texture": ExtResource("73_ybmce")
 }, {
 "duration": 1.0,
-"texture": ExtResource("73_wvovu")
+"texture": ExtResource("74_g5cmc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("74_xt7lf")
+"texture": ExtResource("75_hvthy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("75_ot5sy")
+"texture": ExtResource("76_kcf1w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("76_fir4u")
+"texture": ExtResource("77_1pelb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("77_brwh4")
+"texture": ExtResource("78_lleum")
 }],
 "loop": true,
 "name": &"move",
@@ -382,22 +383,20 @@ height = 92.0
 clip_children = 1
 layout_mode = 0
 mouse_filter = 2
-texture = ExtResource("1_3q7yd")
+texture = ExtResource("1_txsn8")
 
-[node name="player_goose" type="Node2D" parent="." instance=ExtResource("2_q1gx6")]
-z_index = 2
-position = Vector2(792, 315)
-rotation = 1.41846
-script = ExtResource("3_w43dq")
+[node name="player_goose" type="Node2D" parent="." instance=ExtResource("2_jlnl0")]
+position = Vector2(845.791, 461.531)
+script = ExtResource("3_j5yow")
 
-[node name="wing_b" type="Node2D" parent="player_goose" instance=ExtResource("4_kl407")]
-script = ExtResource("5_g6a26")
+[node name="wing_b" type="Node2D" parent="player_goose" groups=["wing"] instance=ExtResource("4_ntehr")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/wing_b"]
-texture = ExtResource("6_bdayr")
+texture = ExtResource("6_q40pb")
 offset = Vector2(31, -93)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/wing_b"]
@@ -411,14 +410,17 @@ position = Vector2(28, -78)
 rotation = 0.631809
 shape = SubResource("CapsuleShape2D_qv4y3")
 
-[node name="leg_b" type="Node2D" parent="player_goose" instance=ExtResource("18_bhnv2")]
-script = ExtResource("5_g6a26")
+[node name="Marker2D" type="Marker2D" parent="player_goose/wing_b"]
+position = Vector2(28, -77)
+
+[node name="leg_b" type="Node2D" parent="player_goose" groups=["leg"] instance=ExtResource("18_vsnd8")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/leg_b"]
-texture = ExtResource("19_7b2lv")
+texture = ExtResource("19_78rp8")
 offset = Vector2(-5, 61)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/leg_b"]
@@ -431,14 +433,18 @@ offset = Vector2(-5, 61)
 position = Vector2(-4, 67)
 shape = SubResource("CapsuleShape2D_2cwof")
 
-[node name="body" type="Node2D" parent="player_goose" instance=ExtResource("30_fsc0p")]
-script = ExtResource("5_g6a26")
+[node name="Marker2D" type="Marker2D" parent="player_goose/leg_b"]
+position = Vector2(0, 66)
+script = ExtResource("30_b8xao")
+
+[node name="body" type="Node2D" parent="player_goose" instance=ExtResource("31_maa0b")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/body"]
-texture = ExtResource("31_jveaw")
+texture = ExtResource("32_f8n3v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/body"]
 sprite_frames = SubResource("SpriteFrames_jqarf")
@@ -450,15 +456,14 @@ position = Vector2(-16, 3)
 rotation = -1.06465
 shape = SubResource("CapsuleShape2D_r4ca2")
 
-[node name="head" type="Node2D" parent="player_goose" instance=ExtResource("42_naxkw")]
-rotation = -2.28155
-script = ExtResource("5_g6a26")
+[node name="head" type="Node2D" parent="player_goose" groups=["head"] instance=ExtResource("43_me7l1")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/head"]
-texture = ExtResource("43_dptjv")
+texture = ExtResource("44_yerxj")
 offset = Vector2(-75, -75)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/head"]
@@ -471,14 +476,17 @@ offset = Vector2(-75, -75)
 position = Vector2(-63, -75)
 shape = SubResource("CapsuleShape2D_u4f64")
 
-[node name="wing_f" type="Node2D" parent="player_goose" instance=ExtResource("54_plojr")]
-script = ExtResource("5_g6a26")
+[node name="Marker2D" type="Marker2D" parent="player_goose/head"]
+position = Vector2(-63, -75)
+
+[node name="wing_f" type="Node2D" parent="player_goose" groups=["wing"] instance=ExtResource("55_sm3uu")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/wing_f"]
-texture = ExtResource("55_blp0b")
+texture = ExtResource("56_hewj5")
 offset = Vector2(68, -69)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/wing_f"]
@@ -492,14 +500,17 @@ position = Vector2(71, -77)
 rotation = 0.656244
 shape = SubResource("CapsuleShape2D_n3htx")
 
-[node name="leg_f" type="Node2D" parent="player_goose" instance=ExtResource("66_lagtb")]
-script = ExtResource("5_g6a26")
+[node name="Marker2D" type="Marker2D" parent="player_goose/wing_f"]
+position = Vector2(71, -76)
+
+[node name="leg_f" type="Node2D" parent="player_goose" groups=["leg"] instance=ExtResource("67_p141i")]
+script = ExtResource("5_riag5")
 mouse_in_area = false
 selected = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_goose/leg_f"]
-texture = ExtResource("67_0l7jh")
+texture = ExtResource("68_h1aos")
 offset = Vector2(36, 63)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/leg_f"]
@@ -512,23 +523,5 @@ offset = Vector2(36, 63)
 position = Vector2(38, 64)
 shape = SubResource("CapsuleShape2D_fooku")
 
-[node name="@Node2D@2" type="Node2D" parent="player_goose" instance=ExtResource("4_kl407")]
-rotation = -0.817764
-script = ExtResource("5_g6a26")
-mouse_in_area = false
-selected = false
-
-[node name="Sprite2D" type="Sprite2D" parent="player_goose/@Node2D@2"]
-texture = ExtResource("6_bdayr")
-offset = Vector2(31, -93)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player_goose/@Node2D@2"]
-sprite_frames = SubResource("SpriteFrames_7xrp5")
-offset = Vector2(31, -93)
-
-[node name="Area2D" type="Area2D" parent="player_goose/@Node2D@2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_goose/@Node2D@2/Area2D"]
-position = Vector2(28, -78)
-rotation = 0.631809
-shape = SubResource("CapsuleShape2D_qv4y3")
+[node name="Marker2D" type="Marker2D" parent="player_goose/leg_f"]
+position = Vector2(38, 63)

@@ -64,7 +64,7 @@ animations = [{
 radius = 31.0357
 height = 173.647
 
-[node name="wing_f" type="Node2D"]
+[node name="wing_f" type="Node2D" groups=["wing"]]
 script = ExtResource("1_dsd36")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -81,3 +81,6 @@ offset = Vector2(68, -69)
 position = Vector2(71, -77)
 rotation = 0.656244
 shape = SubResource("CapsuleShape2D_n3htx")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(71, -76)
