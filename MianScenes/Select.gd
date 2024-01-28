@@ -73,11 +73,13 @@ func _on_control_gui_input(event: InputEvent) -> void:
 					pass
 
 func _on_add_pressed() -> void:
+	get_node("/root/Main/Music/add").play()
 	$Control/NinePatchRect.times -= 1
 	added = false
 	current_state = "add_limb"
 
 func _on_roll_pressed() -> void:
+	get_node("/root/Main/Music/add").play()
 	$Control/NinePatchRect.times -= 1
 	selected = false
 	if select_limb != null:
@@ -85,7 +87,11 @@ func _on_roll_pressed() -> void:
 	current_state = "roll_limb"
 
 func _on_alright_pressed() -> void:
+	get_node("/root/Main/Music/yes").play()
 	selected = false
 	added = false
 	for gooseChild in goose.get_children():
 		gooseChild.modulate = Color(1,1,1)
+
+func _on_v_scroll_bar_scrolling() -> void:
+	get_node("/root/Main/Music/socalView").play()

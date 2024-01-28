@@ -12,4 +12,5 @@ func newspaper_to_playing() -> void:
 		get_node("../newspaper").queue_free()
 	var playing = preload("res://MianScenes/playing.tscn").instantiate()
 	playing.name = "playing"
+	playing.level = get_parent().level
 	get_parent().add_child(playing)

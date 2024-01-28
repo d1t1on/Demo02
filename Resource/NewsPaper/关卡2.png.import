@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bex5day5uq4a6"
-path="res://.godot/imported/yes.png-e151028d078c97f6903fd3a6184a78be.ctex"
+uid="uid://ckqyy620tc768"
+path="res://.godot/imported/关卡2.png-42153fdc5f5a1574557ca1c2aa84da33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/SaleStore/yes.png"
-dest_files=["res://.godot/imported/yes.png-e151028d078c97f6903fd3a6184a78be.ctex"]
+source_file="res://Resource/NewsPaper/关卡2.png"
+dest_files=["res://.godot/imported/关卡2.png-42153fdc5f5a1574557ca1c2aa84da33.ctex"]
 
 [params]
 

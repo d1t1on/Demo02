@@ -35,6 +35,8 @@ func generate_player_goose() -> void:
 	var player_goose = GOOSE.instantiate()
 	player_goose.name = "player_goose"
 	player_goose.position = $"../../ReverseOrignalPoint".position
+	player_goose.stopAnimation = true
+	player_goose.scale.x = 1
 	get_node("left_background").add_child(player_goose)
 	call_deferred("begin_roll")
 
@@ -60,6 +62,7 @@ func mirror_rotation(mirror_goose: Node2D) -> void:
 
 ## 复制操作时保存左边部分
 func save_left_body() -> void:
+	get_node("/root/Main/Music/yes").play()
 	count_mark(get_node("left_background/player_goose"))
 	# 将两个背景clip模式变成clip_only，并将镜像角色加入到右侧背景下
 	get_node("left_background").clip_children = CanvasItem.CLIP_CHILDREN_ONLY
@@ -133,3 +136,6 @@ func count_mark(player_goose: Node2D) -> void:
 					$"../../../UI/VBoxContainer".update($"../../..".mark.values())
 			else:
 				print(str(child) + "的Marker2D不存在")
+
+func _on_v_scroll_bar_scrolling() -> void:
+	get_node("/root/Main/Music/socalView").play()

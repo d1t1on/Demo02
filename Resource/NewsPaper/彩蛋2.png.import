@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blcitq2orjiql"
-path="res://.godot/imported/newspaper.png-134d63bcf96f4c03a642123514c6eff7.ctex"
+uid="uid://cf7l8ctlh8i2w"
+path="res://.godot/imported/彩蛋2.png-6c96a0fb0b1b11f07aa6c8c590fdfc63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/newsPapers/newspaper.png"
-dest_files=["res://.godot/imported/newspaper.png-134d63bcf96f4c03a642123514c6eff7.ctex"]
+source_file="res://Resource/NewsPaper/彩蛋2.png"
+dest_files=["res://.godot/imported/彩蛋2.png-6c96a0fb0b1b11f07aa6c8c590fdfc63.ctex"]
 
 [params]
 

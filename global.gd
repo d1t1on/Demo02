@@ -1,5 +1,7 @@
 extends Node
 
+var level: int = 1
+
 func change_owner(changeNode: Node) -> void:
 	var childArray: Array = get_all_child(changeNode)
 	for child in childArray:

@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3x237eoyimm5"]
+[gd_scene load_steps=14 format=3 uid="uid://b3x237eoyimm5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5jrnt"]
 [ext_resource type="PackedScene" uid="uid://dinr0wxa8kvft" path="res://MianScenes/start_menu.tscn" id="1_v1ax1"]
 [ext_resource type="Script" path="res://MianScenes/FSM.gd" id="2_7pxqq"]
+[ext_resource type="AudioStream" uid="uid://bvakkpesdvjd0" path="res://Resource/bgm/点start鹅叫.WAV" id="4_nox6w"]
+[ext_resource type="AudioStream" uid="uid://qliq24jq7kil" path="res://Resource/bgm/walk.WAV" id="5_q5hhi"]
+[ext_resource type="AudioStream" uid="uid://r0b6ir3b2mtp" path="res://Resource/bgm/点击音效鹅叫（通用）.WAV" id="6_2aw8b"]
+[ext_resource type="AudioStream" uid="uid://dn6xbmaxiyjdi" path="res://Resource/bgm/旋转条调动声.WAV" id="7_4y1ig"]
+[ext_resource type="AudioStream" uid="uid://cawyoi3c7buo6" path="res://Resource/bgm/鹅叫1（备用.WAV" id="8_gafjn"]
+[ext_resource type="AudioStream" uid="uid://cjf4j8mbv8x0i" path="res://Resource/bgm/报纸音效.wav" id="9_qk6iw"]
+[ext_resource type="AudioStream" uid="uid://dqgvpbgmftabs" path="res://Resource/bgm/大地图进车间`布料音效.wav" id="10_gh8w6"]
+[ext_resource type="AudioStream" uid="uid://dwwh8f64fddle" path="res://Resource/bgm/大地图bgm（循环）.WAV" id="11_1frqi"]
+[ext_resource type="AudioStream" uid="uid://d037qjyv7r07k" path="res://Resource/bgm/结算bgm.mp3" id="12_qf22m"]
+[ext_resource type="AudioStream" uid="uid://c5p28h25gyfmu" path="res://Resource/bgm/大地图行走鹅叫1.WAV" id="13_wegm1"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5jrnt")
@@ -11,3 +21,39 @@ script = ExtResource("1_5jrnt")
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("2_7pxqq")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="start_btn" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("4_nox6w")
+autoplay = true
+
+[node name="walk" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("5_q5hhi")
+
+[node name="add" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("6_2aw8b")
+volume_db = 15.0
+
+[node name="socalView" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("7_4y1ig")
+volume_db = 20.0
+
+[node name="yes" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("8_gafjn")
+
+[node name="newspaper" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("9_qk6iw")
+
+[node name="car" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("10_gh8w6")
+
+[node name="bgm" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("11_1frqi")
+autoplay = true
+
+[node name="over" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("12_qf22m")
+
+[node name="speak" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("13_wegm1")

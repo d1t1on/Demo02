@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sy5g81vy7w8f"]
 
 [ext_resource type="Script" path="res://MianScenes/news_paper.gd" id="1_1cuuu"]
-[ext_resource type="Texture2D" uid="uid://blcitq2orjiql" path="res://Resource/newsPapers/newspaper.png" id="1_2hkck"]
+[ext_resource type="Texture2D" uid="uid://dxdl66a6vdcw3" path="res://Resource/NewsPaper/关卡1.png" id="2_aih85"]
 
 [node name="NewsPaper" type="Control"]
 layout_mode = 3
@@ -14,8 +14,11 @@ script = ExtResource("1_1cuuu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_2hkck")
+offset_left = 20.0
+offset_top = -127.0
+offset_right = 1886.0
+offset_bottom = 1273.0
+texture = ExtResource("2_aih85")
+expand_mode = 1
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
