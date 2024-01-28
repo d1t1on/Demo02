@@ -1,6 +1,6 @@
 extends NinePatchRect
 
-@export var times:int = 2:
+@export var times:int = 9:
 	set = changeTimes
 
 func changeTimes(newTimes: int) -> void:
@@ -8,6 +8,7 @@ func changeTimes(newTimes: int) -> void:
 	$LastTimes.text = "剩余操作次数：" + str(times)
 
 func _ready() -> void:
+	times = $"../../..".select_times
 	$LastTimes.text = "剩余操作次数：" + str(times)
 
 func _on_add_mouse_entered() -> void:

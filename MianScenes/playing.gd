@@ -3,15 +3,44 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var goose: Node2D = $Goose
 var reversed: bool = false
+var total_mark: float = 0
 var mark: Dictionary = {
 	"head" : 1,
 	"wing" : 2,
 	"leg" : 2
 }
-	
+@onready var select_times:int = get_parent().level_information[0][3]
 
 func into_car(area: Area2D) -> void:
-	print("进入结算画面")
+	$UI/SaleStore.show()
+	get_node("Goose").unmove = true
+	if $Select/Control/NinePatchRect.times >= 0:
+		$UI/SaleStore/confirm/Label.text = "是否出售"
+	else:
+		$UI/SaleStore/confirm/Label.text = "你真这么做吗"
+
+func end_game() -> void:
+	count_mark()
+	if total_mark < get_parent().level_information[0][4]:
+		print("bruh")
+		$UI/SaleStore/level_end/AnimatedSprite2D.play("bruh")
+		$UI/SaleStore/level_end/Label.text = "你离良好差" + str(get_parent().level_information[0][4] - total_mark) + "分"
+	elif total_mark >= get_parent().level_information[0][4] \
+	and total_mark < get_parent().level_information[0][5]:
+		print("nice")
+		$UI/SaleStore/level_end/AnimatedSprite2D.play("nice")
+		$UI/SaleStore/level_end/Label.text = "你离天才还差" + str(get_parent().level_information[0][5] - total_mark) + "分"
+	else:
+		print("genius")
+		$UI/SaleStore/level_end/AnimatedSprite2D.play("genius")
+		$UI/SaleStore/level_end/Label.text = str(total_mark) + "分你做到了!"
+
+func count_mark() -> void:
+	total_mark = 0
+	var count_level = get_parent().level_information[0]
+	total_mark += mark["head"] * count_level[0]
+	total_mark += mark["wing"] * count_level[1]
+	total_mark += mark["leg"] * count_level[2]
 	
 func into_reverse(area: Area2D) -> void:
 	if not reversed:
@@ -33,8 +62,9 @@ func into_select(area: Area2D) -> void:
 	camera_2d.position.x = 1920 * 2
 	goose.position = $Select/SelectOrignalPoint.global_position
 	goose.unmove = true
-	goose.scale *= 1.5
+	goose.scale *= 1.2
 	goose.z_index = 2
+	goose.velocity = Vector2.ZERO
 
 func exit_select() -> void:
 	if goose == null:
@@ -44,4 +74,3 @@ func exit_select() -> void:
 	goose.unmove = false
 	goose.scale = Vector2(1,1)
 	goose.z_index = 0
-	

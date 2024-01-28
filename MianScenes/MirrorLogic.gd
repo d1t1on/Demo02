@@ -108,6 +108,13 @@ func add_new_player_goose() -> void:
 	begin_syn_rotation = false
 	$"../../..".add_child(player_goose)
 	$"../../../Camera2D".position.x = 0
+	call_deferred("save_temp_player_goose")
+
+func save_temp_player_goose() -> void:
+	var temp_player_goose = PackedScene.new()
+	Global.change_owner(get_node("../../../Goose"))
+	temp_player_goose.pack(get_node("../../../Goose"))
+	ResourceSaver.save(temp_player_goose, "res://MianScenes/mirror/temp_player_goose.tscn")
 
 ## 但在点击按钮前触发，减过轴向的肢体数量，没过的双倍
 func count_mark(player_goose: Node2D) -> void:

@@ -88,4 +88,4 @@ func _on_alright_pressed() -> void:
 	selected = false
 	added = false
 	for gooseChild in goose.get_children():
-		select_limb.modulate = Color(1,1,1)
+		gooseChild.modulate = Color(1,1,1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhy03vtpl40n6"]
+[gd_scene load_steps=96 format=3 uid="uid://dhy03vtpl40n6"]
 
 [ext_resource type="Texture2D" uid="uid://cyiemkh1v8jxn" path="res://Resource/MianScene/背景.png" id="1_p3ufo"]
 [ext_resource type="Script" path="res://MianScenes/playing.gd" id="1_u5ftt"]
@@ -6,25 +6,287 @@
 [ext_resource type="Script" path="res://Entitise/Controls/mark_uigd.gd" id="2_nqxq7"]
 [ext_resource type="Texture2D" uid="uid://ctj2udx1jqb7f" path="res://Resource/MianScene/翻转.png" id="3_ilcoi"]
 [ext_resource type="Texture2D" uid="uid://4vcbpimgm1oa" path="res://Resource/MianScene/选区.png" id="4_rbtg7"]
+[ext_resource type="Texture2D" uid="uid://crih405ldvkd3" path="res://Resource/SaleStore/售卖询问板.png" id="6_6dmlp"]
 [ext_resource type="PackedScene" uid="uid://rk254cxu2sr0" path="res://Entitise/goose.tscn" id="6_i3tfu"]
+[ext_resource type="Script" path="res://Entitise/Controls/confirm.gd" id="7_4jev1"]
 [ext_resource type="Texture2D" uid="uid://bft4cu63ula28" path="res://Resource/GooseAniamtion/idle/head.png" id="7_a33n8"]
+[ext_resource type="Texture2D" uid="uid://ch4yvmxtxp7rl" path="res://Resource/SaleStore/yes.png" id="7_h8ahu"]
 [ext_resource type="Texture2D" uid="uid://ctceijm4s1eow" path="res://Resource/GooseAniamtion/idle/wings_F.png" id="8_g1vf6"]
+[ext_resource type="Texture2D" uid="uid://bpcyfrbschucr" path="res://Resource/SaleStore/no.png" id="8_hf30j"]
 [ext_resource type="Texture2D" uid="uid://c1ml5ydyaj6me" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="9_fw7rj"]
 [ext_resource type="Script" path="res://MianScenes/Select.gd" id="10_0psey"]
 [ext_resource type="Texture2D" uid="uid://bremcrkcu0e3m" path="res://Resource/MianScene/整体示例.png" id="10_8tacv"]
 [ext_resource type="Texture2D" uid="uid://d0kc40kegnopw" path="res://MianScenes/mirror/蒙版.png" id="10_toluc"]
+[ext_resource type="Texture2D" uid="uid://bkvnt04vge4io" path="res://Resource/logo/bruh/bruh_00.png" id="10_yn0uy"]
 [ext_resource type="Script" path="res://MianScenes/MirrorLogic.gd" id="11_2xc0u"]
+[ext_resource type="Texture2D" uid="uid://blo6b25aes8in" path="res://Resource/logo/bruh/bruh_01.png" id="11_ipnjl"]
+[ext_resource type="Texture2D" uid="uid://cif3peahcbh7p" path="res://Resource/logo/bruh/bruh_02.png" id="12_04472"]
 [ext_resource type="Texture2D" uid="uid://buamo3jpi3ipb" path="res://Resource/UI/yes.png" id="13_3u3dv"]
+[ext_resource type="Texture2D" uid="uid://bsinyb2slb5l4" path="res://Resource/logo/bruh/bruh_03.png" id="13_gnesh"]
 [ext_resource type="Texture2D" uid="uid://bm8tbfe2ulaap" path="res://Resource/UI/旋转按钮.png" id="14_ofa6g"]
+[ext_resource type="Texture2D" uid="uid://bo73u5iye52q6" path="res://Resource/logo/bruh/bruh_04.png" id="14_xqaag"]
+[ext_resource type="Texture2D" uid="uid://c2dtl58pa3h44" path="res://Resource/logo/bruh/bruh_05.png" id="15_h7kee"]
 [ext_resource type="Texture2D" uid="uid://b3754s6rcxpsa" path="res://Resource/UI/旋转条.png" id="15_jvtoy"]
+[ext_resource type="Texture2D" uid="uid://d3vmkclcpu8xe" path="res://Resource/logo/bruh/bruh_06.png" id="16_hc3lq"]
+[ext_resource type="Texture2D" uid="uid://bivxt807n7ww3" path="res://Resource/logo/bruh/bruh_07.png" id="17_jf6a1"]
 [ext_resource type="Texture2D" uid="uid://cv3sx8nwbejds" path="res://Resource/UI/板.png" id="17_ocyqg"]
+[ext_resource type="Texture2D" uid="uid://cqket77a6bv08" path="res://Resource/logo/bruh/bruh_08.png" id="18_5lge5"]
 [ext_resource type="Script" path="res://MianScenes/SelectLogic.gd" id="18_jqxl1"]
 [ext_resource type="Texture2D" uid="uid://sile3sq3htgj" path="res://Resource/UI/头.png" id="18_pfqr3"]
+[ext_resource type="Texture2D" uid="uid://krledbdic27y" path="res://Resource/logo/bruh/bruh_09.png" id="19_hym1m"]
 [ext_resource type="Texture2D" uid="uid://cpe6r3u8wnsra" path="res://Resource/UI/翅膀.png" id="20_f76fg"]
+[ext_resource type="Texture2D" uid="uid://b0b0feirsn0cc" path="res://Resource/logo/bruh/bruh_10.png" id="20_olqa7"]
 [ext_resource type="Script" path="res://Entitise/Controls/select_limb.gd" id="20_vsme8"]
+[ext_resource type="Texture2D" uid="uid://o4bs8qv7eog2" path="res://Resource/logo/bruh/bruh_11.png" id="21_bqct3"]
 [ext_resource type="Texture2D" uid="uid://b4hhpkg6c34pm" path="res://Resource/UI/腿.png" id="21_cercn"]
 [ext_resource type="Texture2D" uid="uid://dk7uuck6u55nn" path="res://Resource/UI/+.png" id="22_mj68i"]
+[ext_resource type="Texture2D" uid="uid://cg3b84fex1ktp" path="res://Resource/logo/bruh/bruh_12.png" id="22_rcptm"]
 [ext_resource type="Texture2D" uid="uid://cmyems07itfyo" path="res://Resource/UI/移动.png" id="23_6yfnh"]
+[ext_resource type="Texture2D" uid="uid://dpir6fga1361x" path="res://Resource/logo/bruh/bruh_13.png" id="23_68dh3"]
+[ext_resource type="Texture2D" uid="uid://c4rc4ct2u2mje" path="res://Resource/logo/bruh/bruh_14.png" id="24_l6jlu"]
+[ext_resource type="Texture2D" uid="uid://drd1x5odcgslt" path="res://Resource/logo/bruh/bruh_15.png" id="25_jr147"]
+[ext_resource type="Texture2D" uid="uid://dp2teeikofkb2" path="res://Resource/logo/bruh/bruh_16.png" id="26_7ulp4"]
+[ext_resource type="Texture2D" uid="uid://bru1c4gb6bk1q" path="res://Resource/logo/bruh/bruh_17.png" id="27_mjxfg"]
+[ext_resource type="Texture2D" uid="uid://cb6u8mbpldhts" path="res://Resource/logo/bruh/bruh_18.png" id="28_4886q"]
+[ext_resource type="Texture2D" uid="uid://dul3rbyjkity0" path="res://Resource/logo/bruh/bruh_19.png" id="29_hcjo7"]
+[ext_resource type="Texture2D" uid="uid://cj4ity0ba30ml" path="res://Resource/logo/genius/genius_00.png" id="30_4imuo"]
+[ext_resource type="Texture2D" uid="uid://dg17fgatku546" path="res://Resource/logo/genius/genius_01.png" id="31_cgrvp"]
+[ext_resource type="Texture2D" uid="uid://ccmkcs0wu5vpd" path="res://Resource/logo/genius/genius_02.png" id="32_bsb71"]
+[ext_resource type="Texture2D" uid="uid://bkifwh3ilbdbs" path="res://Resource/logo/genius/genius_03.png" id="33_56am5"]
+[ext_resource type="Texture2D" uid="uid://k6b8pyyol1q2" path="res://Resource/logo/genius/genius_04.png" id="34_6tfy1"]
+[ext_resource type="Texture2D" uid="uid://moo5rraqfbhk" path="res://Resource/logo/genius/genius_05.png" id="35_uhs2r"]
+[ext_resource type="Texture2D" uid="uid://dixhm5gy1xse7" path="res://Resource/logo/genius/genius_06.png" id="36_f22cp"]
+[ext_resource type="Texture2D" uid="uid://bms1lsjmtmugc" path="res://Resource/logo/genius/genius_07.png" id="37_6upiu"]
+[ext_resource type="Texture2D" uid="uid://dlba6apx03bpq" path="res://Resource/logo/genius/genius_08.png" id="38_wfedd"]
+[ext_resource type="Texture2D" uid="uid://dgupm8x3ev6nc" path="res://Resource/logo/genius/genius_09.png" id="39_p5oou"]
+[ext_resource type="Texture2D" uid="uid://b1yjg1wgxfvqk" path="res://Resource/logo/genius/genius_10.png" id="40_jbgq1"]
+[ext_resource type="Texture2D" uid="uid://b8085k5vmgp01" path="res://Resource/logo/genius/genius_11.png" id="41_x30dd"]
+[ext_resource type="Texture2D" uid="uid://ds4t1ygmuj3r8" path="res://Resource/logo/genius/genius_12.png" id="42_iupmf"]
+[ext_resource type="Texture2D" uid="uid://d25g075f8pedv" path="res://Resource/logo/genius/genius_13.png" id="43_ejwwm"]
+[ext_resource type="Texture2D" uid="uid://ew8sbvjneyh6" path="res://Resource/logo/genius/genius_14.png" id="44_bdllm"]
+[ext_resource type="Texture2D" uid="uid://db5ghxc0guwjj" path="res://Resource/logo/genius/genius_15.png" id="45_4ihir"]
+[ext_resource type="Texture2D" uid="uid://dlp10rj47ly0o" path="res://Resource/logo/genius/genius_16.png" id="46_cpml2"]
+[ext_resource type="Texture2D" uid="uid://cjpash7t5yewk" path="res://Resource/logo/genius/genius_17.png" id="47_bhulf"]
+[ext_resource type="Texture2D" uid="uid://bqy68bc1lvxcu" path="res://Resource/logo/genius/genius_18.png" id="48_c2lih"]
+[ext_resource type="Texture2D" uid="uid://41cpi05o8rpv" path="res://Resource/logo/genius/genius_19.png" id="49_vr1ff"]
+[ext_resource type="Texture2D" uid="uid://cv0pggl8qeaf8" path="res://Resource/logo/nice/nice_00.png" id="50_58axb"]
+[ext_resource type="Texture2D" uid="uid://bg4qwueguc6an" path="res://Resource/logo/nice/nice_01.png" id="51_mqth4"]
+[ext_resource type="Texture2D" uid="uid://bjvpyuow1j2qu" path="res://Resource/logo/nice/nice_02.png" id="52_pdv3h"]
+[ext_resource type="Texture2D" uid="uid://dib2l8qxiebiq" path="res://Resource/logo/nice/nice_03.png" id="53_lvoeu"]
+[ext_resource type="Texture2D" uid="uid://dbi1ujrr6gny0" path="res://Resource/logo/nice/nice_04.png" id="54_chnyp"]
+[ext_resource type="Texture2D" uid="uid://bpoopyntqjtax" path="res://Resource/logo/nice/nice_05.png" id="55_1aq4p"]
+[ext_resource type="Texture2D" uid="uid://c7p7f52f031ms" path="res://Resource/logo/nice/nice_06.png" id="56_nor7f"]
+[ext_resource type="Texture2D" uid="uid://b0eh85ac2edii" path="res://Resource/logo/nice/nice_07.png" id="57_8ip2v"]
+[ext_resource type="Texture2D" uid="uid://dqy4duc1w507w" path="res://Resource/logo/nice/nice_08.png" id="58_nut1h"]
+[ext_resource type="Texture2D" uid="uid://baj7cukjc0jws" path="res://Resource/logo/nice/nice_09.png" id="59_xoh4n"]
+[ext_resource type="Texture2D" uid="uid://bk38okxwfoygk" path="res://Resource/logo/nice/nice_10.png" id="60_fx328"]
+[ext_resource type="Texture2D" uid="uid://b8kl2bmmsa00n" path="res://Resource/logo/nice/nice_11.png" id="61_lhb64"]
+[ext_resource type="Texture2D" uid="uid://cisxt3yobr1fw" path="res://Resource/logo/nice/nice_12.png" id="62_lbdym"]
+[ext_resource type="Texture2D" uid="uid://qrgu3lsw20lr" path="res://Resource/logo/nice/nice_13.png" id="63_myvuh"]
+[ext_resource type="Texture2D" uid="uid://17vy3wa0yfwy" path="res://Resource/logo/nice/nice_14.png" id="64_0sby2"]
+[ext_resource type="Texture2D" uid="uid://djg5n67g0fip3" path="res://Resource/logo/nice/nice_15.png" id="65_cv0sa"]
+[ext_resource type="Texture2D" uid="uid://cigx2v7x0chhl" path="res://Resource/logo/nice/nice_16.png" id="66_mc1k7"]
+[ext_resource type="Texture2D" uid="uid://pmwik6ci5oc3" path="res://Resource/logo/nice/nice_17.png" id="67_x7uy7"]
+[ext_resource type="Texture2D" uid="uid://ccigwo8b0i7jx" path="res://Resource/logo/nice/nice_18.png" id="68_54jjc"]
+[ext_resource type="Texture2D" uid="uid://ce1wn3ewyqjc5" path="res://Resource/logo/nice/nice_19.png" id="69_tvsvl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_omu8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yn0uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ipnjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_04472")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gnesh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xqaag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h7kee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hc3lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jf6a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5lge5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hym1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_olqa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bqct3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rcptm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_68dh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_l6jlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jr147")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7ulp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mjxfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4886q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hcjo7")
+}],
+"loop": true,
+"name": &"bruh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_4imuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_cgrvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bsb71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_56am5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6tfy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_uhs2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_f22cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6upiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_wfedd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p5oou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jbgq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_x30dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_iupmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ejwwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_bdllm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4ihir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_cpml2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_bhulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_c2lih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vr1ff")
+}],
+"loop": true,
+"name": &"genius",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_58axb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_mqth4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_pdv3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_lvoeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_chnyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_1aq4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nor7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_8ip2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_nut1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_xoh4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_fx328")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_lhb64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_lbdym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_myvuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_0sby2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cv0sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mc1k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_x7uy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_54jjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_tvsvl")
+}],
+"loop": true,
+"name": &"nice",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhrfq"]
 size = Vector2(156, 491)
@@ -93,6 +355,90 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "        X 2"
 
+[node name="SaleStore" type="NinePatchRect" parent="UI"]
+visible = false
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1820.0
+offset_bottom = 980.0
+texture = ExtResource("6_6dmlp")
+region_rect = Rect2(0, 0, 496, 286)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 14
+
+[node name="confirm" type="Control" parent="UI/SaleStore"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_4jev1")
+
+[node name="yes" type="TextureButton" parent="UI/SaleStore/confirm"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 634.0
+offset_right = 467.0
+offset_bottom = 674.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("7_h8ahu")
+
+[node name="no" type="TextureButton" parent="UI/SaleStore/confirm"]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 630.0
+offset_right = 1137.0
+offset_bottom = 670.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_hf30j")
+
+[node name="Label" type="Label" parent="UI/SaleStore/confirm"]
+layout_mode = 1
+offset_left = 501.0
+offset_top = 300.0
+offset_right = 1201.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "你真要这么做吗
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level_end" type="Control" parent="UI/SaleStore"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/SaleStore/level_end"]
+position = Vector2(824, 549)
+scale = Vector2(1.3211, 1.3211)
+sprite_frames = SubResource("SpriteFrames_omu8p")
+animation = &"bruh"
+frame_progress = 0.877943
+
+[node name="Label" type="Label" parent="UI/SaleStore/level_end"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 704.0
+offset_right = 1067.0
+offset_bottom = 812.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "你离天才差5分"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="UI/SaleStore/level_end"]
+position = Vector2(807, 310)
+
 [node name="orignalPoint" type="Marker2D" parent="."]
 position = Vector2(1633, 812)
 
@@ -138,9 +484,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="选区/Area2D"]
 position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_ky5lb")
-
-[node name="Goose" parent="." instance=ExtResource("6_i3tfu")]
-position = Vector2(1639, 814)
 
 [node name="Reverse" type="Node2D" parent="."]
 position = Vector2(1920, 0)
@@ -328,6 +671,11 @@ text = "剩余操作次数："
 [node name="SelectOrignalPoint" type="Marker2D" parent="Select"]
 position = Vector2(904, 519)
 
+[node name="Goose" parent="." instance=ExtResource("6_i3tfu")]
+position = Vector2(1650, 762)
+
+[connection signal="pressed" from="UI/SaleStore/confirm/yes" to="UI/SaleStore/confirm" method="_on_yes_pressed"]
+[connection signal="pressed" from="UI/SaleStore/confirm/no" to="UI/SaleStore/confirm" method="_on_no_pressed"]
 [connection signal="area_entered" from="Car/Area2D" to="." method="into_car"]
 [connection signal="area_entered" from="翻转/Area2D" to="." method="into_reverse"]
 [connection signal="area_entered" from="选区/Area2D" to="." method="into_select"]
