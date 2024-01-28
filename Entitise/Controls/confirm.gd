@@ -5,7 +5,8 @@ func _on_yes_pressed() -> void:
 	$"../level_end".show()
 	$"../../..".end_game()
 	var your_goose = load("res://MianScenes/mirror/temp_player_goose.tscn").instantiate()
-	your_goose.global_position = $"../level_end/Marker2D".global_position
+	your_goose.position = $"../level_end/Marker2D".position
+	your_goose.scale *= 3
 	$"../level_end".add_child(your_goose)
 	
 
