@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=3 uid="uid://d3r8fm3iya5lt"]
+
+[ext_resource type="Texture2D" uid="uid://c1ml5ydyaj6me" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="1_avo2u"]
+[ext_resource type="Texture2D" uid="uid://dfq4x6d7jiudl" path="res://Resource/GooseAniamtion/move_legB/move_legB_00.png" id="1_gdkmp"]
+[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_orsvn"]
+[ext_resource type="Texture2D" uid="uid://cc4o7uo15hl8r" path="res://Resource/GooseAniamtion/空白图片.png" id="2_2sqyf"]
+[ext_resource type="Texture2D" uid="uid://d5smewmh3xr3" path="res://Resource/GooseAniamtion/move_legB/move_legB_01.png" id="2_k1gqn"]
+[ext_resource type="Texture2D" uid="uid://ddcti6w6cs72l" path="res://Resource/GooseAniamtion/move_legB/move_legB_02.png" id="3_l1kej"]
+[ext_resource type="Texture2D" uid="uid://nl018u45g0dy" path="res://Resource/GooseAniamtion/move_legB/move_legB_03.png" id="4_ofxwq"]
+[ext_resource type="Texture2D" uid="uid://vkmu4xi3ts7g" path="res://Resource/GooseAniamtion/move_legB/move_legB_04.png" id="5_axdg6"]
+[ext_resource type="Texture2D" uid="uid://bllan70djdebq" path="res://Resource/GooseAniamtion/move_legB/move_legB_05.png" id="6_bs3sh"]
+[ext_resource type="Texture2D" uid="uid://crss0ujchvrbi" path="res://Resource/GooseAniamtion/move_legB/move_legB_06.png" id="7_lcf87"]
+[ext_resource type="Texture2D" uid="uid://i27h0aa0mhnw" path="res://Resource/GooseAniamtion/move_legB/move_legB_07.png" id="8_2vdvt"]
+[ext_resource type="Texture2D" uid="uid://bti07oqvga454" path="res://Resource/GooseAniamtion/move_legB/move_legB_08.png" id="9_7f5p0"]
+[ext_resource type="Texture2D" uid="uid://d4ejqt2k1fc7u" path="res://Resource/GooseAniamtion/move_legB/move_legB_09.png" id="10_eyjnv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsl1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2sqyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gdkmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k1gqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l1kej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ofxwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axdg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bs3sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lcf87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2vdvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7f5p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eyjnv")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fooku"]
+radius = 27.0
+height = 92.0
+
+[node name="leg_f" type="Node2D"]
+script = ExtResource("1_orsvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_avo2u")
+offset = Vector2(36, 63)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tsl1y")
+offset = Vector2(36, 63)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(38, 64)
+shape = SubResource("CapsuleShape2D_fooku")

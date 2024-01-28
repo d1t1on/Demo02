@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://rk254cxu2sr0"]
+
+[ext_resource type="PackedScene" uid="uid://057ppe8tvia1" path="res://Entitise/limbs/wing_b.tscn" id="1_k8n7d"]
+[ext_resource type="Script" path="res://Entitise/goose.gd" id="1_l7ty4"]
+[ext_resource type="PackedScene" uid="uid://bn6dxhiv1xmhc" path="res://Entitise/limbs/leg_b.tscn" id="2_rh8pt"]
+[ext_resource type="PackedScene" uid="uid://cp2bmstran37l" path="res://Entitise/limbs/body.tscn" id="3_kt0oc"]
+[ext_resource type="PackedScene" uid="uid://cyxps7088msso" path="res://Entitise/limbs/head.tscn" id="4_0a1ry"]
+[ext_resource type="PackedScene" uid="uid://bfw4x43aojwvh" path="res://Entitise/limbs/wing_f.tscn" id="5_1j0bw"]
+[ext_resource type="PackedScene" uid="uid://d3r8fm3iya5lt" path="res://Entitise/limbs/leg_f.tscn" id="6_aurto"]
+
+[node name="Goose" type="Node2D"]
+script = ExtResource("1_l7ty4")
+
+[node name="wing_b" parent="." instance=ExtResource("1_k8n7d")]
+metadata/_edit_lock_ = true
+
+[node name="leg_b" parent="." instance=ExtResource("2_rh8pt")]
+metadata/_edit_lock_ = true
+
+[node name="body" parent="." instance=ExtResource("3_kt0oc")]
+metadata/_edit_lock_ = true
+
+[node name="head" parent="." instance=ExtResource("4_0a1ry")]
+metadata/_edit_lock_ = true
+
+[node name="wing_f" parent="." instance=ExtResource("5_1j0bw")]
+metadata/_edit_lock_ = true
+
+[node name="leg_f" parent="." instance=ExtResource("6_aurto")]
+metadata/_edit_lock_ = true

@@ -1,0 +1,83 @@
+[gd_scene load_steps=16 format=3 uid="uid://057ppe8tvia1"]
+
+[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_42k83"]
+[ext_resource type="Texture2D" uid="uid://cwgtwoijhykwn" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_00.png" id="1_byv65"]
+[ext_resource type="Texture2D" uid="uid://4p8bk0018bif" path="res://Resource/GooseAniamtion/idle/wing_B.png" id="1_oe5wq"]
+[ext_resource type="Texture2D" uid="uid://cc4o7uo15hl8r" path="res://Resource/GooseAniamtion/空白图片.png" id="2_4ebpa"]
+[ext_resource type="Texture2D" uid="uid://cmegru8melgyw" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_01.png" id="2_pqooe"]
+[ext_resource type="Texture2D" uid="uid://b1vqe6unw2ghq" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_02.png" id="3_k3raj"]
+[ext_resource type="Texture2D" uid="uid://1wr286xu74rw" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_03.png" id="4_ys43l"]
+[ext_resource type="Texture2D" uid="uid://cqrw441q2yo62" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_04.png" id="5_v2fqg"]
+[ext_resource type="Texture2D" uid="uid://cp5rkn1deg4ro" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_05.png" id="6_iduyl"]
+[ext_resource type="Texture2D" uid="uid://hc3e8lrpoqau" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_06.png" id="7_y6tg4"]
+[ext_resource type="Texture2D" uid="uid://e34hunpb5112" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_07.png" id="8_ni1q4"]
+[ext_resource type="Texture2D" uid="uid://bkcyv2i6xsd0u" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_08.png" id="9_205l0"]
+[ext_resource type="Texture2D" uid="uid://y4gys2d2uasu" path="res://Resource/GooseAniamtion/move_ wingsB/move_wingsB_09.png" id="10_5nwqd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xrp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ebpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_byv65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pqooe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k3raj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ys43l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v2fqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iduyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y6tg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ni1q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_205l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5nwqd")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qv4y3"]
+radius = 30.9628
+height = 137.535
+
+[node name="wing_b" type="Node2D"]
+script = ExtResource("1_42k83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oe5wq")
+offset = Vector2(31, -93)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7xrp5")
+offset = Vector2(31, -93)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(28, -78)
+rotation = 0.631809
+shape = SubResource("CapsuleShape2D_qv4y3")

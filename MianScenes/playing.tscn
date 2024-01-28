@@ -1,0 +1,339 @@
+[gd_scene load_steps=30 format=3 uid="uid://dhy03vtpl40n6"]
+
+[ext_resource type="Texture2D" uid="uid://cyiemkh1v8jxn" path="res://Resource/MianScene/背景.png" id="1_p3ufo"]
+[ext_resource type="Script" path="res://MianScenes/playing.gd" id="1_u5ftt"]
+[ext_resource type="Texture2D" uid="uid://bcanjhww87cba" path="res://Resource/MianScene/car.png" id="2_m0i68"]
+[ext_resource type="Texture2D" uid="uid://ctj2udx1jqb7f" path="res://Resource/MianScene/翻转.png" id="3_ilcoi"]
+[ext_resource type="Texture2D" uid="uid://4vcbpimgm1oa" path="res://Resource/MianScene/选区.png" id="4_rbtg7"]
+[ext_resource type="PackedScene" uid="uid://rk254cxu2sr0" path="res://Entitise/goose.tscn" id="6_i3tfu"]
+[ext_resource type="Texture2D" uid="uid://bft4cu63ula28" path="res://Resource/GooseAniamtion/idle/head.png" id="7_a33n8"]
+[ext_resource type="Texture2D" uid="uid://ctceijm4s1eow" path="res://Resource/GooseAniamtion/idle/wings_F.png" id="8_g1vf6"]
+[ext_resource type="Texture2D" uid="uid://c1ml5ydyaj6me" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="9_fw7rj"]
+[ext_resource type="Script" path="res://MianScenes/Select.gd" id="10_0psey"]
+[ext_resource type="Texture2D" uid="uid://bremcrkcu0e3m" path="res://Resource/MianScene/整体示例.png" id="10_8tacv"]
+[ext_resource type="Texture2D" uid="uid://d0kc40kegnopw" path="res://MianScenes/mirror/蒙版.png" id="10_toluc"]
+[ext_resource type="Script" path="res://MianScenes/MirrorLogic.gd" id="11_2xc0u"]
+[ext_resource type="Texture2D" uid="uid://buamo3jpi3ipb" path="res://Resource/UI/yes.png" id="13_3u3dv"]
+[ext_resource type="Texture2D" uid="uid://bm8tbfe2ulaap" path="res://Resource/UI/旋转按钮.png" id="14_ofa6g"]
+[ext_resource type="Texture2D" uid="uid://b3754s6rcxpsa" path="res://Resource/UI/旋转条.png" id="15_jvtoy"]
+[ext_resource type="Texture2D" uid="uid://cv3sx8nwbejds" path="res://Resource/UI/板.png" id="17_ocyqg"]
+[ext_resource type="Script" path="res://MianScenes/SelectLogic.gd" id="18_jqxl1"]
+[ext_resource type="Texture2D" uid="uid://sile3sq3htgj" path="res://Resource/UI/头.png" id="18_pfqr3"]
+[ext_resource type="Texture2D" uid="uid://cpe6r3u8wnsra" path="res://Resource/UI/翅膀.png" id="20_f76fg"]
+[ext_resource type="Script" path="res://Entitise/Controls/select_limb.gd" id="20_vsme8"]
+[ext_resource type="Texture2D" uid="uid://b4hhpkg6c34pm" path="res://Resource/UI/腿.png" id="21_cercn"]
+[ext_resource type="Texture2D" uid="uid://dk7uuck6u55nn" path="res://Resource/UI/+.png" id="22_mj68i"]
+[ext_resource type="Texture2D" uid="uid://cmyems07itfyo" path="res://Resource/UI/移动.png" id="23_6yfnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhrfq"]
+size = Vector2(156, 491)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lms4"]
+size = Vector2(393, 392)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky5lb"]
+size = Vector2(380, 392)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7tn3"]
+texture = ExtResource("15_jvtoy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ej7q"]
+texture = ExtResource("15_jvtoy")
+
+[node name="playing" type="Node2D"]
+script = ExtResource("1_u5ftt")
+metadata/_edit_vertical_guides_ = [2877.0]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HeadNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/HeadNumber"]
+layout_mode = 2
+texture = ExtResource("7_a33n8")
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/HeadNumber"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     X 20"
+
+[node name="WingNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/WingNumber"]
+layout_mode = 2
+texture = ExtResource("8_g1vf6")
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/WingNumber"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "X 90"
+
+[node name="LegNumber" type="HBoxContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/LegNumber"]
+layout_mode = 2
+texture = ExtResource("9_fw7rj")
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/LegNumber"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "        X 20"
+
+[node name="orignalPoint" type="Marker2D" parent="."]
+position = Vector2(1633, 812)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)
+
+[node name="backGround" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_p3ufo")
+metadata/_edit_lock_ = true
+
+[node name="Car" type="Sprite2D" parent="."]
+position = Vector2(142, 830)
+texture = ExtResource("2_m0i68")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Car"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car/Area2D"]
+position = Vector2(-63, 1.5)
+shape = SubResource("RectangleShape2D_xhrfq")
+
+[node name="翻转" type="Sprite2D" parent="."]
+position = Vector2(570, 338)
+texture = ExtResource("3_ilcoi")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="翻转"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="翻转/Area2D"]
+position = Vector2(-6.5, -2)
+shape = SubResource("RectangleShape2D_8lms4")
+
+[node name="选区" type="Sprite2D" parent="."]
+position = Vector2(1486, 340)
+texture = ExtResource("4_rbtg7")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="选区"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="选区/Area2D"]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_ky5lb")
+
+[node name="Goose" parent="." instance=ExtResource("6_i3tfu")]
+z_index = 2
+position = Vector2(1639, 814)
+
+[node name="Reverse" type="Node2D" parent="."]
+position = Vector2(1920, 0)
+
+[node name="Control" type="Control" parent="Reverse"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="TextureRect" parent="Reverse/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_8tacv")
+
+[node name="Control" type="Control" parent="Reverse/Control"]
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1820.0
+offset_bottom = 980.0
+script = ExtResource("11_2xc0u")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Reverse/Control/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_toluc")
+
+[node name="TextureRect2" type="TextureRect" parent="Reverse/Control/Control"]
+layout_mode = 0
+offset_left = 860.0
+offset_right = 1720.0
+offset_bottom = 880.0
+texture = ExtResource("10_toluc")
+
+[node name="Line2D" type="Line2D" parent="Reverse/Control/Control"]
+points = PackedVector2Array(860, 80, 860, 680)
+default_color = Color(0, 0, 0, 1)
+
+[node name="TextureButton" type="TextureButton" parent="Reverse/Control/Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 726.0
+offset_top = 716.0
+offset_right = 860.0
+offset_bottom = 753.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("13_3u3dv")
+
+[node name="VScrollBar" type="VScrollBar" parent="Reverse/Control/Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 1368.0
+offset_top = 89.0
+offset_right = 1418.0
+offset_bottom = 759.0
+theme_override_icons/increment = ExtResource("14_ofa6g")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_f7tn3")
+
+[node name="ReverseOrignalPoint" type="Marker2D" parent="Reverse"]
+position = Vector2(452, 545)
+
+[node name="Select" type="Node2D" parent="."]
+position = Vector2(3840, 0)
+script = ExtResource("10_0psey")
+
+[node name="Control" type="Control" parent="Select"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Select/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_8tacv")
+
+[node name="VScrollBar" type="VScrollBar" parent="Select/Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 1580.0
+offset_top = 189.0
+offset_right = 1630.0
+offset_bottom = 902.0
+theme_override_styles/scroll = SubResource("StyleBoxTexture_6ej7q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Select/Control"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1820.0
+offset_bottom = 980.0
+texture = ExtResource("17_ocyqg")
+region_rect = Rect2(0, 0, 616, 360)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("18_jqxl1")
+metadata/_edit_lock_ = true
+
+[node name="limbs" type="VBoxContainer" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 140.0
+offset_bottom = 140.0
+theme_override_constants/separation = 12
+
+[node name="head" type="TextureRect" parent="Select/Control/NinePatchRect/limbs"]
+custom_minimum_size = Vector2(158, 158)
+layout_mode = 2
+texture = ExtResource("18_pfqr3")
+script = ExtResource("20_vsme8")
+
+[node name="wing" type="TextureRect" parent="Select/Control/NinePatchRect/limbs"]
+custom_minimum_size = Vector2(158, 158)
+layout_mode = 2
+texture = ExtResource("20_f76fg")
+script = ExtResource("20_vsme8")
+
+[node name="leg" type="TextureRect" parent="Select/Control/NinePatchRect/limbs"]
+custom_minimum_size = Vector2(158, 158)
+layout_mode = 2
+texture = ExtResource("21_cercn")
+script = ExtResource("20_vsme8")
+
+[node name="alright" type="TextureButton" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 704.0
+offset_right = 771.0
+offset_bottom = 744.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("13_3u3dv")
+
+[node name="add" type="TextureButton" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 578.0
+offset_right = 448.0
+offset_bottom = 618.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("22_mj68i")
+
+[node name="roll" type="TextureButton" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 578.0
+offset_right = 1136.0
+offset_bottom = 618.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("23_6yfnh")
+
+[node name="AddTips" type="Label" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 21.0
+offset_right = 1042.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "从左侧部件中选择其二
+并增加至随机处"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LastTimes" type="Label" parent="Select/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 804.0
+offset_right = 1346.0
+offset_bottom = 859.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "剩余操作次数："
+
+[node name="SelectOrignalPoint" type="Marker2D" parent="Select"]
+position = Vector2(904, 519)
+
+[connection signal="area_entered" from="Car/Area2D" to="." method="into_car"]
+[connection signal="area_entered" from="翻转/Area2D" to="." method="into_reverse"]
+[connection signal="area_entered" from="选区/Area2D" to="." method="into_select"]
+[connection signal="pressed" from="Reverse/Control/Control/TextureButton" to="Reverse/Control/Control" method="save_left_body"]
+[connection signal="gui_input" from="Select/Control" to="Select" method="_on_control_gui_input"]
+[connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="." method="exit_select"]
+[connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="Select" method="_on_alright_pressed"]
+[connection signal="mouse_entered" from="Select/Control/NinePatchRect/add" to="Select/Control/NinePatchRect" method="_on_add_mouse_entered"]
+[connection signal="mouse_exited" from="Select/Control/NinePatchRect/add" to="Select/Control/NinePatchRect" method="_on_add_mouse_exited"]
+[connection signal="pressed" from="Select/Control/NinePatchRect/add" to="Select" method="_on_add_pressed"]
+[connection signal="mouse_entered" from="Select/Control/NinePatchRect/roll" to="Select/Control/NinePatchRect" method="_on_roll_mouse_entered"]
+[connection signal="mouse_exited" from="Select/Control/NinePatchRect/roll" to="Select/Control/NinePatchRect" method="_on_roll_mouse_exited"]
+[connection signal="pressed" from="Select/Control/NinePatchRect/roll" to="Select" method="_on_roll_pressed"]
