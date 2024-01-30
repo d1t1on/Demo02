@@ -12,7 +12,7 @@ var mark: Dictionary = {
 @onready var select_times:int 
 var level: int
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	select_times = get_parent().level_information[level - 1][3]
 	if get_parent().level_information[level - 1][0] > 0:
 		# head
@@ -77,7 +77,8 @@ func save_current_goose() -> void:
 	var goose_file = PackedScene.new()
 	Global.change_owner(goose)
 	goose_file.pack(goose)
-	ResourceSaver.save(goose_file, "res://Entitise/temp_resource/temp_goose.tscn")
+	var error = ResourceSaver.save(goose_file, "user://temp_goose.tscn")
+	print(error)
 
 func into_select(area: Area2D) -> void:
 	if goose == null:
@@ -89,6 +90,7 @@ func into_select(area: Area2D) -> void:
 	goose.scale *= 1.2
 	goose.z_index = 2
 	goose.velocity = Vector2.ZERO
+	$Select/Control/VScrollBar.value = 50
 
 func exit_select() -> void:
 	if goose == null:

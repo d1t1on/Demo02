@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dhy03vtpl40n6"]
+[gd_scene load_steps=95 format=3 uid="uid://dhy03vtpl40n6"]
 
 [ext_resource type="Texture2D" uid="uid://cyiemkh1v8jxn" path="res://Resource/MianScene/背景.png" id="1_p3ufo"]
 [ext_resource type="Script" path="res://MianScenes/playing.gd" id="1_u5ftt"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://blo6b25aes8in" path="res://Resource/logo/bruh/bruh_01.png" id="11_ipnjl"]
 [ext_resource type="Texture2D" uid="uid://cif3peahcbh7p" path="res://Resource/logo/bruh/bruh_02.png" id="12_04472"]
 [ext_resource type="Texture2D" uid="uid://bsinyb2slb5l4" path="res://Resource/logo/bruh/bruh_03.png" id="13_gnesh"]
-[ext_resource type="Texture2D" uid="uid://bm8tbfe2ulaap" path="res://Resource/UI/旋转按钮.png" id="14_ofa6g"]
 [ext_resource type="Texture2D" uid="uid://bo73u5iye52q6" path="res://Resource/logo/bruh/bruh_04.png" id="14_xqaag"]
 [ext_resource type="Texture2D" uid="uid://c2dtl58pa3h44" path="res://Resource/logo/bruh/bruh_05.png" id="15_h7kee"]
 [ext_resource type="Texture2D" uid="uid://b3754s6rcxpsa" path="res://Resource/UI/旋转条.png" id="15_jvtoy"]
@@ -297,7 +296,7 @@ size = Vector2(393, 392)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky5lb"]
 size = Vector2(380, 392)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7tn3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_penj4"]
 texture = ExtResource("15_jvtoy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ej7q"]
@@ -541,8 +540,9 @@ offset_left = 1368.0
 offset_top = 89.0
 offset_right = 1418.0
 offset_bottom = 759.0
-theme_override_icons/increment = ExtResource("14_ofa6g")
-theme_override_styles/scroll = SubResource("StyleBoxTexture_f7tn3")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_penj4")
+theme_override_styles/scroll_focus = SubResource("StyleBoxTexture_penj4")
+value = 50.0
 
 [node name="ReverseOrignalPoint" type="Marker2D" parent="Reverse"]
 position = Vector2(452, 545)
@@ -573,6 +573,7 @@ offset_top = 189.0
 offset_right = 1630.0
 offset_bottom = 902.0
 theme_override_styles/scroll = SubResource("StyleBoxTexture_6ej7q")
+theme_override_styles/scroll_focus = SubResource("StyleBoxTexture_6ej7q")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Select/Control"]
 layout_mode = 0
@@ -687,6 +688,7 @@ autoplay = true
 [connection signal="scrolling" from="Reverse/Control/Control/VScrollBar" to="Reverse/Control/Control" method="_on_v_scroll_bar_scrolling"]
 [connection signal="gui_input" from="Select/Control" to="Select" method="_on_control_gui_input"]
 [connection signal="scrolling" from="Select/Control/VScrollBar" to="Select" method="_on_v_scroll_bar_scrolling"]
+[connection signal="value_changed" from="Select/Control/VScrollBar" to="Select" method="_on_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="." method="exit_select"]
 [connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="Select" method="_on_alright_pressed"]
 [connection signal="mouse_entered" from="Select/Control/NinePatchRect/add" to="Select/Control/NinePatchRect" method="_on_add_mouse_entered"]

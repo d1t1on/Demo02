@@ -13,7 +13,8 @@ config_version=5
 config/name="Demo02"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Resource/UI/头 已选.png"
+config/windows_native_icon="res://Icon.ico"
 
 [autoload]
 
@@ -23,6 +24,7 @@ Global="*res://global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 
 [dotnet]
 

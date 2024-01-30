@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 		get_node("left_background/player_goose").rotation = ($VScrollBar.value - 50) / 50 * PI
 
 func mirror_start() -> void:
-	GOOSE = load("res://Entitise/temp_resource/temp_goose.tscn")
+	GOOSE = load("user://temp_goose.tscn")
 	generate_left_background()
 	call_deferred("generate_player_goose")
 	$VScrollBar.value = 50
@@ -36,7 +36,6 @@ func generate_player_goose() -> void:
 	player_goose.name = "player_goose"
 	player_goose.position = $"../../ReverseOrignalPoint".position
 	player_goose.stopAnimation = true
-	player_goose.scale.x = 1
 	get_node("left_background").add_child(player_goose)
 	call_deferred("begin_roll")
 
@@ -87,24 +86,25 @@ func save_changed_duck_to_file() -> void:
 	
 	var right_bg_packed := PackedScene.new()
 	right_bg_packed.pack(get_node("right_background"))
-	ResourceSaver.save(right_bg_packed, "res://MianScenes/mirror/right_bg_packed.tscn")
+	ResourceSaver.save(right_bg_packed, "user://right_bg_packed.tscn")
 	
 	var left_bg_packed := PackedScene.new()
 	left_bg_packed.pack(get_node("left_background"))
-	ResourceSaver.save(left_bg_packed, "res://MianScenes/mirror/left_bg_packed.tscn")
+	ResourceSaver.save(left_bg_packed, "user://left_bg_packed.tscn")
 
 func add_new_player_goose() -> void:
 	var player_goose := Node2D.new()
 	player_goose.name = "Goose"
 	player_goose.set_script(load("res://Entitise/goose.gd"))
+	player_goose.stopAnimation = true
 	player_goose.position = Vector2(1555, 848) - Vector2(860, 880) - Vector2(1000, 0)
 	player_goose.position = $TextureRect.size / 2
 	
-	var r1 = load("res://MianScenes/mirror/right_bg_packed.tscn").instantiate()
+	var r1 = load("user://right_bg_packed.tscn").instantiate()
 	r1.get_child(0).set_script(null)
 	player_goose.add_child(r1)
 	
-	var r2 = load("res://MianScenes/mirror/left_bg_packed.tscn").instantiate()
+	var r2 = load("user://left_bg_packed.tscn").instantiate()
 	r2.get_child(0).set_script(null)
 	player_goose.add_child(r2)
 	
@@ -117,7 +117,7 @@ func save_temp_player_goose() -> void:
 	var temp_player_goose = PackedScene.new()
 	Global.change_owner(get_node("../../../Goose"))
 	temp_player_goose.pack(get_node("../../../Goose"))
-	ResourceSaver.save(temp_player_goose, "res://MianScenes/mirror/temp_player_goose.tscn")
+	ResourceSaver.save(temp_player_goose, "user://temp_player_goose.tscn")
 
 ## 但在点击按钮前触发，减过轴向的肢体数量，没过的双倍
 func count_mark(player_goose: Node2D) -> void:

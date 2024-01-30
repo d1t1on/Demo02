@@ -1,12 +1,14 @@
 extends TextureRect
 
+var add_button_pressed: bool = false
+
 func _ready() -> void:
 	gui_input.connect(click)
 	
 func click(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
-			if event.is_pressed():
+			if event.is_pressed() and add_button_pressed:
 				$"../../../..".selectArray.append(name)
 				match name:
 					"head":

@@ -209,18 +209,18 @@ autoplay = "default"
 
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 785.0
-offset_right = 683.0
-offset_bottom = 892.0
+offset_left = 786.0
+offset_top = 628.0
+offset_right = 1138.0
+offset_bottom = 816.0
 texture_normal = ExtResource("47_unekm")
 
 [node name="QiutButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1273.0
-offset_top = 802.0
-offset_right = 1505.0
-offset_bottom = 941.0
+offset_left = 834.0
+offset_top = 859.0
+offset_right = 1066.0
+offset_bottom = 997.0
 texture_normal = ExtResource("48_oorpd")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

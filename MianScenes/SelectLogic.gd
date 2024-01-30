@@ -8,7 +8,7 @@ func changeTimes(newTimes: int) -> void:
 	$LastTimes.text = "剩余操作次数：" + str(times)
 
 func _ready() -> void:
-	times = get_node("/root/Main/").level_information[0][3]
+	times = get_node("/root/Main/").level_information[$"../../..".level - 1][3]
 	$LastTimes.text = "剩余操作次数：" + str(times)
 
 func _on_add_mouse_entered() -> void:
