@@ -70,6 +70,9 @@ func _on_control_gui_input(event: InputEvent) -> void:
 					pass
 
 func _on_add_pressed() -> void:
+	if get_node("/root/Main").level <= 3 and $Control/NinePatchRect.times == 0:
+		return
+	
 	get_node("/root/Main/Music/add").play()
 	for child in $Control/NinePatchRect/limbs.get_children():
 		child.add_button_pressed = true
@@ -80,6 +83,9 @@ func _on_add_pressed() -> void:
 	current_state = "add_limb"
 
 func _on_roll_pressed() -> void:
+	if get_node("/root/Main").level <= 3 and $Control/NinePatchRect.times == 0:
+		return
+	
 	get_node("/root/Main/Music/add").play()
 	$Control/NinePatchRect.times -= 1
 	selected = false

@@ -39,19 +39,19 @@ func into_car(area: Area2D) -> void:
 	if $Select/Control/NinePatchRect.times >= 0:
 		$UI/SaleStore/confirm/Label.text = "是否出售"
 	else:
-		$UI/SaleStore/confirm/Label.text = "你真这么做吗"
+		$UI/SaleStore/confirm/Label.text = "这只鹅严重变异\n你真这么做吗"
 
 func end_game() -> void:
 	count_mark()
 	if total_mark < get_parent().level_information[level - 1][4]:
 		print("bruh")
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("bruh")
-		$UI/SaleStore/level_end/Label.text = "你离良好差" + str(get_parent().level_information[level - 1][4] - total_mark) + "分"
+		$UI/SaleStore/level_end/Label.text = "你离等级Nice差" + str(get_parent().level_information[level - 1][4] - total_mark) + "分"
 	elif total_mark >= get_parent().level_information[level - 1][4] \
 	and total_mark < get_parent().level_information[level - 1][5]:
 		print("nice")
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("nice")
-		$UI/SaleStore/level_end/Label.text = "你离天才还差" + str(get_parent().level_information[level - 1][5] - total_mark) + "分"
+		$UI/SaleStore/level_end/Label.text = "你离等级Gnius还差" + str(get_parent().level_information[level - 1][5] - total_mark) + "分"
 	else:
 		print("genius")
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("genius")
@@ -69,7 +69,7 @@ func into_reverse(area: Area2D) -> void:
 		get_node("/root/Main/Music/car").play()
 		save_current_goose()
 		reversed = true
-		camera_2d.position.x = 1920
+		camera_2d.position.x = 3840
 		goose.free()
 		$Reverse/Control/Control.mirror_start()
 
@@ -84,7 +84,7 @@ func into_select(area: Area2D) -> void:
 	if goose == null:
 		return
 	get_node("/root/Main/Music/car").play()
-	camera_2d.position.x = 1920 * 2
+	camera_2d.position.x = 7680
 	goose.position = $Select/SelectOrignalPoint.global_position
 	goose.unmove = true
 	goose.scale *= 1.2

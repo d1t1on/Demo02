@@ -304,7 +304,7 @@ texture = ExtResource("15_jvtoy")
 
 [node name="playing" type="Node2D"]
 script = ExtResource("1_u5ftt")
-metadata/_edit_vertical_guides_ = [2877.0]
+metadata/_edit_vertical_guides_ = [2877.0, 4801.0]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -399,7 +399,8 @@ offset_right = 1201.0
 offset_bottom = 437.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "你真要这么做吗
+text = "这只鹅严重变异
+你真这么做吗
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -422,13 +423,13 @@ frame_progress = 0.0146609
 
 [node name="Label" type="Label" parent="UI/SaleStore/level_end"]
 layout_mode = 0
-offset_left = 680.0
-offset_top = 704.0
-offset_right = 1067.0
-offset_bottom = 812.0
+offset_left = 634.0
+offset_top = 708.0
+offset_right = 1101.0
+offset_bottom = 816.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "你离天才差5分"
+text = "你离等级Gnius差5分"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -482,7 +483,7 @@ position = Vector2(-3, -1)
 shape = SubResource("RectangleShape2D_ky5lb")
 
 [node name="Reverse" type="Node2D" parent="."]
-position = Vector2(1920, 0)
+position = Vector2(3840, 0)
 
 [node name="Control" type="Control" parent="Reverse"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -548,7 +549,7 @@ value = 50.0
 position = Vector2(452, 545)
 
 [node name="Select" type="Node2D" parent="."]
-position = Vector2(3840, 0)
+position = Vector2(7680, 0)
 script = ExtResource("10_0psey")
 
 [node name="Control" type="Control" parent="Select"]
@@ -654,8 +655,8 @@ offset_right = 1042.0
 offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "从左侧部件中选择其二
-并增加至随机处"
+text = "点击添加按钮
+或旋转按钮"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -667,7 +668,7 @@ offset_right = 1346.0
 offset_bottom = 859.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "剩余操作次数："
+text = "剩余变异次数："
 
 [node name="SelectOrignalPoint" type="Marker2D" parent="Select"]
 position = Vector2(904, 519)

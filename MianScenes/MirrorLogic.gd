@@ -52,7 +52,7 @@ func generate_mirror_goose() -> void:
 ## 镜像位置
 func mirror_position(mirror_goose: Node2D) -> void:
 	var player_goose = get_node("left_background/player_goose")
-	mirror_goose.global_position = Vector2(2877 * 2 - player_goose.global_position.x ,player_goose.global_position.y)
+	mirror_goose.global_position = Vector2(4800 * 2 - player_goose.global_position.x ,player_goose.global_position.y)
 
 ## 镜像角度
 func mirror_rotation(mirror_goose: Node2D) -> void:
@@ -97,7 +97,6 @@ func add_new_player_goose() -> void:
 	player_goose.name = "Goose"
 	player_goose.set_script(load("res://Entitise/goose.gd"))
 	player_goose.stopAnimation = true
-	player_goose.position = Vector2(1555, 848) - Vector2(860, 880) - Vector2(1000, 0)
 	player_goose.position = $TextureRect.size / 2
 	
 	var r1 = load("user://right_bg_packed.tscn").instantiate()
@@ -126,7 +125,7 @@ func count_mark(player_goose: Node2D) -> void:
 			pass
 		else:
 			if child.get_node("Marker2D") != null:
-				if child.get_node("Marker2D").global_position.x > 2877:
+				if child.get_node("Marker2D").global_position.x > 4800:
 					var type = child.get_groups()[0]
 					$"../../..".mark[type] -= 1
 					$"../../../UI/VBoxContainer".update($"../../..".mark.values())

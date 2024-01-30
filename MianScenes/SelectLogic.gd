@@ -5,11 +5,11 @@ extends NinePatchRect
 
 func changeTimes(newTimes: int) -> void:
 	times = newTimes
-	$LastTimes.text = "剩余操作次数：" + str(times)
+	$LastTimes.text = "剩余变异次数：" + str(times)
 
 func _ready() -> void:
 	times = get_node("/root/Main/").level_information[$"../../..".level - 1][3]
-	$LastTimes.text = "剩余操作次数：" + str(times)
+	$LastTimes.text = "剩余变异次数：" + str(times)
 
 func _on_add_mouse_entered() -> void:
 	$AddTips.text = "从左侧部件中选择其二\n并增加至随机处"
