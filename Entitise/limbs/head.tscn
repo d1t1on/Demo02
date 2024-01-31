@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cyxps7088msso"]
 
-[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_4diar"]
 [ext_resource type="Texture2D" uid="uid://brj5jbwl5ueme" path="res://Resource/GooseAniamtion/move_ head/move_head_00.png" id="1_8gexd"]
 [ext_resource type="Texture2D" uid="uid://bft4cu63ula28" path="res://Resource/GooseAniamtion/idle/head.png" id="1_33bkp"]
+[ext_resource type="Script" path="res://Entitise/limbs/head.gd" id="1_dav27"]
 [ext_resource type="Texture2D" uid="uid://cc4o7uo15hl8r" path="res://Resource/GooseAniamtion/空白图片.png" id="1_vhu72"]
 [ext_resource type="Texture2D" uid="uid://c6qutboyikq3g" path="res://Resource/GooseAniamtion/move_ head/move_head_01.png" id="2_xwcwk"]
 [ext_resource type="Texture2D" uid="uid://d03w4syc4t0fb" path="res://Resource/GooseAniamtion/move_ head/move_head_02.png" id="3_aivpn"]
@@ -65,7 +65,7 @@ radius = 23.0
 height = 174.0
 
 [node name="head" type="Node2D" groups=["head"]]
-script = ExtResource("1_4diar")
+script = ExtResource("1_dav27")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_33bkp")

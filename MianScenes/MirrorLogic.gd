@@ -116,7 +116,7 @@ func save_temp_player_goose() -> void:
 	var temp_player_goose = PackedScene.new()
 	Global.change_owner(get_node("../../../Goose"))
 	temp_player_goose.pack(get_node("../../../Goose"))
-	ResourceSaver.save(temp_player_goose, "user://temp_player_goose.tscn")
+	print(ResourceSaver.save(temp_player_goose, "user://temp_player_goose.tscn"))
 
 ## 但在点击按钮前触发，减过轴向的肢体数量，没过的双倍
 func count_mark(player_goose: Node2D) -> void:

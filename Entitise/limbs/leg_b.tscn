@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://bn6dxhiv1xmhc"]
 
 [ext_resource type="Texture2D" uid="uid://cpbel1j4ljab4" path="res://Resource/GooseAniamtion/move_legF/move_legF_00.png" id="1_8di7a"]
-[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_fq54u"]
 [ext_resource type="Texture2D" uid="uid://4i2472dpx45a" path="res://Resource/GooseAniamtion/idle/leg_B.png" id="1_iaygm"]
+[ext_resource type="Script" path="res://Entitise/limbs/leg.gd" id="1_u4l14"]
 [ext_resource type="Texture2D" uid="uid://cc4o7uo15hl8r" path="res://Resource/GooseAniamtion/空白图片.png" id="2_4byh0"]
 [ext_resource type="Texture2D" uid="uid://cadlkk0wh1oao" path="res://Resource/GooseAniamtion/move_legF/move_legF_01.png" id="2_pheby"]
 [ext_resource type="Texture2D" uid="uid://2vo1ksujnv23" path="res://Resource/GooseAniamtion/move_legF/move_legF_02.png" id="3_jx3cw"]
@@ -66,7 +66,7 @@ radius = 26.0
 height = 108.0
 
 [node name="leg_b" type="Node2D" groups=["leg"]]
-script = ExtResource("1_fq54u")
+script = ExtResource("1_u4l14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_iaygm")

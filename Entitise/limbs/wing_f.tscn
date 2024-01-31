@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bfw4x43aojwvh"]
 
-[ext_resource type="Script" path="res://Entitise/limbs/limbs.gd" id="1_dsd36"]
 [ext_resource type="Texture2D" uid="uid://ctceijm4s1eow" path="res://Resource/GooseAniamtion/idle/wings_F.png" id="1_imt1t"]
+[ext_resource type="Script" path="res://Entitise/limbs/wing.gd" id="1_qejk0"]
 [ext_resource type="Texture2D" uid="uid://b6y5rv4xy84rn" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_00.png" id="1_qnhoy"]
 [ext_resource type="Texture2D" uid="uid://b01a746jykdoo" path="res://Resource/GooseAniamtion/move_wingsF/move_wingsF_01.png" id="2_dlhow"]
 [ext_resource type="Texture2D" uid="uid://cc4o7uo15hl8r" path="res://Resource/GooseAniamtion/空白图片.png" id="2_n6i1f"]
@@ -65,7 +65,7 @@ radius = 31.0357
 height = 173.647
 
 [node name="wing_f" type="Node2D" groups=["wing"]]
-script = ExtResource("1_dsd36")
+script = ExtResource("1_qejk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_imt1t")

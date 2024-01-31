@@ -9,46 +9,70 @@ var added: bool = false
 var add_limb: Node2D
 var selectArray: Array = []
 var current_state: String = ""
-var limbs: Array = [
-	"res://Entitise/limbs/body.tscn",
-	"res://Entitise/limbs/head.tscn",
+var head: Array = [
+	"res://Entitise/limbs/head.tscn"
+]
+var leg: Array = [
 	"res://Entitise/limbs/leg_b.tscn",
 	"res://Entitise/limbs/leg_f.tscn",
+]
+var wing: Array = [
 	"res://Entitise/limbs/wing_b.tscn",
 	"res://Entitise/limbs/wing_f.tscn"
 ]
 
+## 随机生成部位
 func rand_spawner() -> void:
 	var ranNum: int = randi_range(1, 100)
-	var unnecessryArray: Array = []
-	var necessryArray: Array = []
+	print(selectArray)
+	var notSelectArray: Array = ["head", "wing", "leg"]
 	for select in selectArray:
-		for eLimb in limbs:
-			if select in eLimb:
-				necessryArray.append(eLimb)
-			else:
-				unnecessryArray.append(eLimb)
-	if ranNum < 50:
-		if necessryArray.size() == 0:
-			return
-		add_limb = load(necessryArray[randi_range(0, necessryArray.size() - 1)]).instantiate()
-	else:
-		if unnecessryArray.size() == 0:
-			return
-		add_limb = load(unnecessryArray[randi_range(0, unnecessryArray.size() - 1)]).instantiate()
+		notSelectArray.erase(select)
+	
+	var selectTscn: Array = []
+	for select in selectArray:
+		match select:
+			"head":
+				selectTscn.append_array(head)
+			"wing":
+				selectTscn.append_array(wing)
+			"leg":
+				selectTscn.append_array(leg)
+	var notSelectTscn: Array = []
+	for notSelect in notSelectArray:
+		match notSelect:
+			"head":
+				notSelectTscn.append_array(head)
+			"wing":
+				notSelectTscn.append_array(wing)
+			"leg":
+				notSelectTscn.append_array(leg)
+	
+	if ranNum < 50 and selectTscn.size() != 0:
+		var index: int = randi_range(0, selectTscn.size() - 1)
+		print(selectTscn[index])
+		add_limb = load(selectTscn[index]).instantiate()
+	elif ranNum >= 50 and notSelectTscn.size() != 0:
+		var index: int = randi_range(0, notSelectTscn.size() - 1)
+		print(notSelectTscn[index])
+		add_limb = load(notSelectTscn[index]).instantiate()
 
 func add_limbs() -> void:
 	rand_spawner()
+	call_deferred("set_limb")
+	
+func set_limb() -> void:
 	current_mouse_global_position = get_global_mouse_position()
 	var direction: Vector2 = (current_mouse_global_position - goose.position).normalized()
 	
 	# 角度后面再细调
 	if add_limb != null:
 		add_limb.rotation = direction.angle() + PI / 2
-		$"..".mark[add_limb.get_groups()[0]] += 1
+		$"..".mark[add_limb.get_limb_type()] += 1
 		$"../UI/VBoxContainer".update($"..".mark.values())
 		goose.add_child(add_limb)
 
+# 角度与滚动条进度一致
 func roll_limb() -> void:
 	select_limb.rotation = ($Control/VScrollBar.value - 50) / 50 * PI
 
@@ -105,6 +129,7 @@ func _on_alright_pressed() -> void:
 		gooseChild.modulate = Color(1,1,1)
 	for child in $Control/NinePatchRect/limbs.get_children():
 		child.add_button_pressed = false
+	$"../Reverse/Control/Control".save_temp_player_goose()
 
 func set_default_state_in_limbs() -> void:
 	for child in $Control/NinePatchRect/limbs.get_children():
