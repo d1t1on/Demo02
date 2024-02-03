@@ -14,7 +14,7 @@ var level: int
 
 ## 关卡初始化，将需要的对应部位变为红色
 func _ready() -> void:
-	print("level:" + str(level))
+	$UI/ShowLevel.text = "Level：" + str(get_parent().level)
 	select_times = get_parent().level_information[level - 1][3]
 	if get_parent().level_information[level - 1][0] > 0:
 		# 头部
@@ -56,17 +56,20 @@ func end_game() -> void:
 	# 对得分进行评估
 	if total_mark < get_parent().level_information[level - 1][4]:
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("bruh")
-		$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
-		#$UI/SaleStore/level_end/Label.text = "你离等级Nice差" + str(get_parent().level_information[level - 1][4] - total_mark) + "分"
+		get_parent().get_node("Music/bruh").play()
+		#$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
+		$UI/SaleStore/level_end/Label.text = "你离等级Nice差" + str(get_parent().level_information[level - 1][4] - total_mark) + "分"
 	elif total_mark >= get_parent().level_information[level - 1][4] \
 	and total_mark < get_parent().level_information[level - 1][5]:
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("nice")
-		$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
-		#$UI/SaleStore/level_end/Label.text = "你离等级Gnius还差" + str(get_parent().level_information[level - 1][5] - total_mark) + "分"
+		get_parent().get_node("Music/nice").play()
+		#$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
+		$UI/SaleStore/level_end/Label.text = "你离等级Gnius还差" + str(get_parent().level_information[level - 1][5] - total_mark) + "分"
 	else:
 		$UI/SaleStore/level_end/AnimatedSprite2D.play("genius")
-		$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
-		#$UI/SaleStore/level_end/Label.text = str(total_mark) + "分你做到了!"
+		get_parent().get_node("Music/genius").play()
+		#$UI/SaleStore/level_end/Label.text = str(total_mark) + "分"
+		$UI/SaleStore/level_end/Label.text = "你做到了!"
 
 func count_mark() -> void:
 	total_mark = 0
@@ -110,7 +113,7 @@ func into_select(area: Area2D) -> void:
 	goose.scale *= 1.2
 	goose.z_index = 2
 	goose.velocity = Vector2.ZERO
-	$Select/Control/VScrollBar.value = 50
+	$Select.can_roll = true
 
 ## 退出选择车间
 func exit_select() -> void:

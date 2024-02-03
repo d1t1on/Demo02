@@ -6,6 +6,7 @@ var select_limb: Node2D
 var selected: bool = false
 var select_button_pressed: bool = false
 var added: bool = false
+var can_roll: bool = false
 var add_limb: Node2D
 var selectArray: Array = []
 var current_state: String = ""
@@ -20,6 +21,10 @@ var wing: Array = [
 	"res://Entitise/limbs/wing_b.tscn",
 	"res://Entitise/limbs/wing_f.tscn"
 ]
+
+func _physics_process(delta: float) -> void:
+	if can_roll and selected:
+		roll_limb()
 
 ## 随机生成部位
 func rand_spawner() -> void:
@@ -50,15 +55,15 @@ func rand_spawner() -> void:
 	
 	if ranNum < 50 and selectTscn.size() != 0:
 		var index: int = randi_range(0, selectTscn.size() - 1)
-		print(selectTscn[index])
 		add_limb = load(selectTscn[index]).instantiate()
 	elif ranNum >= 50 and notSelectTscn.size() != 0:
 		var index: int = randi_range(0, notSelectTscn.size() - 1)
-		print(notSelectTscn[index])
 		add_limb = load(notSelectTscn[index]).instantiate()
 
 func add_limbs() -> void:
-	rand_spawner()
+	#rand_spawner()
+	var limbs: Array = head + leg + wing
+	add_limb = load(limbs[randi_range(0, limbs.size() - 1)]).instantiate()
 	call_deferred("set_limb")
 	
 func set_limb() -> void:
@@ -67,14 +72,16 @@ func set_limb() -> void:
 	
 	# 角度后面再细调
 	if add_limb != null:
-		add_limb.rotation = direction.angle() + PI / 2
+		#add_limb.rotation = direction.angle() + PI / 2
+		add_limb.rotation = randf_range(- PI / 2 , PI / 2)
 		$"..".mark[add_limb.get_limb_type()] += 1
 		$"../UI/VBoxContainer".update($"..".mark.values())
 		goose.add_child(add_limb)
+	
 
 # 角度与滚动条进度一致
 func roll_limb() -> void:
-	select_limb.rotation = ($Control/VScrollBar.value - 50) / 50 * PI
+	select_limb.rotation = ($Control/NinePatchRect/RollBar.value - 50) / 50 * PI
 
 func _on_control_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -85,11 +92,10 @@ func _on_control_gui_input(event: InputEvent) -> void:
 						if child.mouse_in_area and not selected:
 							select_limb = child
 							select_limb.modulate = Color(1,0,0)
-							$Control/VScrollBar.value = 50
 							selected = true
 				elif current_state == "add_limb" and not added:
 					added = true
-					add_limbs()
+					#add_limbs()
 				else:
 					pass
 
@@ -105,9 +111,10 @@ func _on_add_pressed() -> void:
 	select_button_pressed = false
 	set_default_state_in_limbs()
 	current_state = "add_limb"
+	add_limbs()
 
 func _on_roll_pressed() -> void:
-	if get_node("/root/Main").level <= 3 and $Control/NinePatchRect.times == 0:
+	if get_node("/root/Main").level <= 4 and $Control/NinePatchRect.times == 0:
 		return
 	
 	get_node("/root/Main/Music/add").play()
@@ -124,6 +131,7 @@ func _on_alright_pressed() -> void:
 	selected = false
 	select_button_pressed = false
 	added = false
+	can_roll = false
 	set_default_state_in_limbs()
 	for gooseChild in goose.get_children():
 		gooseChild.modulate = Color(1,1,1)
@@ -141,12 +149,3 @@ func set_default_state_in_limbs() -> void:
 				child.texture = load("res://Resource/UI/翅膀.png")
 			"leg":
 				child.texture = load("res://Resource/UI/腿.png")
-
-func _on_v_scroll_bar_scrolling() -> void:
-	get_node("/root/Main/Music/socalView").play()
-
-func _on_v_scroll_bar_value_changed(value: float) -> void:
-	if not select_button_pressed:
-		$Control/VScrollBar.value = 50
-	else:
-		roll_limb()

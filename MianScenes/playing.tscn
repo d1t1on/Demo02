@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dhy03vtpl40n6"]
+[gd_scene load_steps=92 format=3 uid="uid://dhy03vtpl40n6"]
 
 [ext_resource type="Texture2D" uid="uid://cyiemkh1v8jxn" path="res://Resource/MianScene/背景.png" id="1_p3ufo"]
 [ext_resource type="Script" path="res://MianScenes/playing.gd" id="1_u5ftt"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bpcyfrbschucr" path="res://Resource/SaleStore/no.png" id="8_hf30j"]
 [ext_resource type="Texture2D" uid="uid://c1ml5ydyaj6me" path="res://Resource/GooseAniamtion/idle/leg_F.png" id="9_fw7rj"]
 [ext_resource type="Script" path="res://MianScenes/Select.gd" id="10_0psey"]
-[ext_resource type="Texture2D" uid="uid://bremcrkcu0e3m" path="res://Resource/MianScene/整体示例.png" id="10_8tacv"]
 [ext_resource type="Texture2D" uid="uid://d0kc40kegnopw" path="res://MianScenes/mirror/蒙版.png" id="10_toluc"]
 [ext_resource type="Texture2D" uid="uid://bkvnt04vge4io" path="res://Resource/logo/bruh/bruh_00.png" id="10_yn0uy"]
 [ext_resource type="Script" path="res://MianScenes/MirrorLogic.gd" id="11_2xc0u"]
@@ -24,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://bsinyb2slb5l4" path="res://Resource/logo/bruh/bruh_03.png" id="13_gnesh"]
 [ext_resource type="Texture2D" uid="uid://bo73u5iye52q6" path="res://Resource/logo/bruh/bruh_04.png" id="14_xqaag"]
 [ext_resource type="Texture2D" uid="uid://c2dtl58pa3h44" path="res://Resource/logo/bruh/bruh_05.png" id="15_h7kee"]
-[ext_resource type="Texture2D" uid="uid://b3754s6rcxpsa" path="res://Resource/UI/旋转条.png" id="15_jvtoy"]
 [ext_resource type="Texture2D" uid="uid://d3vmkclcpu8xe" path="res://Resource/logo/bruh/bruh_06.png" id="16_hc3lq"]
 [ext_resource type="Texture2D" uid="uid://bivxt807n7ww3" path="res://Resource/logo/bruh/bruh_07.png" id="17_jf6a1"]
 [ext_resource type="Texture2D" uid="uid://cv3sx8nwbejds" path="res://Resource/UI/板.png" id="17_ocyqg"]
@@ -85,9 +83,10 @@
 [ext_resource type="Texture2D" uid="uid://pmwik6ci5oc3" path="res://Resource/logo/nice/nice_17.png" id="67_x7uy7"]
 [ext_resource type="Texture2D" uid="uid://ccigwo8b0i7jx" path="res://Resource/logo/nice/nice_18.png" id="68_54jjc"]
 [ext_resource type="Texture2D" uid="uid://ce1wn3ewyqjc5" path="res://Resource/logo/nice/nice_19.png" id="69_tvsvl"]
+[ext_resource type="Texture2D" uid="uid://cv6i6iwpq6uq7" path="res://Resource/MianScene/整体示例.png" id="74_fofhy"]
+[ext_resource type="PackedScene" uid="uid://enjg4h7kq36h" path="res://Entitise/Controls/RollVBar/roll_bar.tscn" id="77_8k1a5"]
 [ext_resource type="Texture2D" uid="uid://cdbp4erwvjn7h" path="res://Resource/SaleStore/增加.png" id="86_ksamq"]
 [ext_resource type="Texture2D" uid="uid://bnxikwctk2r6y" path="res://Resource/SaleStore/选择旋转.png" id="87_486p1"]
-[ext_resource type="AudioStream" uid="uid://dwwh8f64fddle" path="res://Resource/bgm/大地图bgm（循环）.WAV" id="90_7k3ll"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_omu8p"]
 animations = [{
@@ -296,12 +295,6 @@ size = Vector2(393, 392)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky5lb"]
 size = Vector2(380, 392)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_penj4"]
-texture = ExtResource("15_jvtoy")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ej7q"]
-texture = ExtResource("15_jvtoy")
-
 [node name="playing" type="Node2D"]
 script = ExtResource("1_u5ftt")
 metadata/_edit_vertical_guides_ = [2877.0, 4801.0]
@@ -437,6 +430,14 @@ vertical_alignment = 1
 [node name="Marker2D" type="Marker2D" parent="UI/SaleStore/level_end"]
 position = Vector2(807, 310)
 
+[node name="ShowLevel" type="Label" parent="UI"]
+offset_left = 1744.0
+offset_top = 2.0
+offset_right = 1824.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 40
+text = "关卡："
+
 [node name="orignalPoint" type="Marker2D" parent="."]
 position = Vector2(1633, 812)
 
@@ -497,7 +498,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("10_8tacv")
+texture = ExtResource("74_fofhy")
 
 [node name="Control" type="Control" parent="Reverse/Control" groups=["mirror"]]
 anchors_preset = 0
@@ -505,6 +506,7 @@ offset_left = 100.0
 offset_top = 100.0
 offset_right = 1820.0
 offset_bottom = 980.0
+mouse_filter = 2
 script = ExtResource("11_2xc0u")
 metadata/_edit_lock_ = true
 
@@ -535,16 +537,12 @@ offset_bottom = 1164.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("7_h8ahu")
 
-[node name="VScrollBar" type="VScrollBar" parent="Reverse/Control/Control"]
-z_index = 3
-layout_mode = 0
+[node name="RollBar" parent="Reverse/Control/Control" instance=ExtResource("77_8k1a5")]
+layout_mode = 1
 offset_left = 1368.0
 offset_top = 89.0
-offset_right = 1418.0
-offset_bottom = 759.0
-theme_override_styles/scroll = SubResource("StyleBoxTexture_penj4")
-theme_override_styles/scroll_focus = SubResource("StyleBoxTexture_penj4")
-value = 50.0
+offset_right = -352.0
+offset_bottom = -791.0
 
 [node name="ReverseOrignalPoint" type="Marker2D" parent="Reverse"]
 position = Vector2(452, 545)
@@ -565,17 +563,7 @@ mouse_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("10_8tacv")
-
-[node name="VScrollBar" type="VScrollBar" parent="Select/Control"]
-z_index = 3
-layout_mode = 0
-offset_left = 1580.0
-offset_top = 189.0
-offset_right = 1630.0
-offset_bottom = 902.0
-theme_override_styles/scroll = SubResource("StyleBoxTexture_6ej7q")
-theme_override_styles/scroll_focus = SubResource("StyleBoxTexture_6ej7q")
+texture = ExtResource("74_fofhy")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Select/Control"]
 layout_mode = 0
@@ -593,6 +581,7 @@ script = ExtResource("18_jqxl1")
 metadata/_edit_lock_ = true
 
 [node name="limbs" type="VBoxContainer" parent="Select/Control/NinePatchRect"]
+visible = false
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
@@ -671,15 +660,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "剩余变异次数："
 
+[node name="RollBar" parent="Select/Control/NinePatchRect" instance=ExtResource("77_8k1a5")]
+layout_mode = 1
+offset_left = 1480.0
+offset_top = 89.0
+offset_right = 1480.0
+offset_bottom = 89.0
+
 [node name="SelectOrignalPoint" type="Marker2D" parent="Select"]
 position = Vector2(904, 519)
 
 [node name="Goose" parent="." instance=ExtResource("6_i3tfu")]
 position = Vector2(1650, 762)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("90_7k3ll")
-autoplay = true
 
 [connection signal="pressed" from="UI/SaleStore/confirm/yes" to="UI/SaleStore/confirm" method="_on_yes_pressed"]
 [connection signal="pressed" from="UI/SaleStore/confirm/no" to="UI/SaleStore/confirm" method="_on_no_pressed"]
@@ -687,10 +679,7 @@ autoplay = true
 [connection signal="area_entered" from="翻转/Area2D" to="." method="into_reverse"]
 [connection signal="area_entered" from="选区/Area2D" to="." method="into_select"]
 [connection signal="pressed" from="Reverse/Control/Control/TextureButton" to="Reverse/Control/Control" method="save_left_body"]
-[connection signal="scrolling" from="Reverse/Control/Control/VScrollBar" to="Reverse/Control/Control" method="_on_v_scroll_bar_scrolling"]
 [connection signal="gui_input" from="Select/Control" to="Select" method="_on_control_gui_input"]
-[connection signal="scrolling" from="Select/Control/VScrollBar" to="Select" method="_on_v_scroll_bar_scrolling"]
-[connection signal="value_changed" from="Select/Control/VScrollBar" to="Select" method="_on_v_scroll_bar_value_changed"]
 [connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="." method="exit_select"]
 [connection signal="pressed" from="Select/Control/NinePatchRect/alright" to="Select" method="_on_alright_pressed"]
 [connection signal="mouse_entered" from="Select/Control/NinePatchRect/add" to="Select/Control/NinePatchRect" method="_on_add_mouse_entered"]

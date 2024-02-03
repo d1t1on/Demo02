@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv6i6iwpq6uq7"
-path="res://.godot/imported/整体示例.png-1c72877ca95c4c6fc2c8fa11b7c618c1.ctex"
+uid="uid://cat30e7ckd007"
+path="res://.godot/imported/背景.png-392571e4e73745bf989370cd7af9fbed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resource/MianScene/整体示例.png"
-dest_files=["res://.godot/imported/整体示例.png-1c72877ca95c4c6fc2c8fa11b7c618c1.ctex"]
+source_file="res://Resource/NewsPaper/背景.png"
+dest_files=["res://.godot/imported/背景.png-392571e4e73745bf989370cd7af9fbed.ctex"]
 
 [params]
 

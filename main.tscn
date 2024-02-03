@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3x237eoyimm5"]
+[gd_scene load_steps=18 format=3 uid="uid://b3x237eoyimm5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5jrnt"]
 [ext_resource type="PackedScene" uid="uid://dinr0wxa8kvft" path="res://MianScenes/start_menu.tscn" id="1_v1ax1"]
@@ -13,16 +13,20 @@
 [ext_resource type="AudioStream" uid="uid://dwwh8f64fddle" path="res://Resource/bgm/大地图bgm（循环）.WAV" id="11_1frqi"]
 [ext_resource type="AudioStream" uid="uid://d037qjyv7r07k" path="res://Resource/bgm/结算bgm.mp3" id="12_qf22m"]
 [ext_resource type="AudioStream" uid="uid://c5p28h25gyfmu" path="res://Resource/bgm/大地图行走鹅叫1.WAV" id="13_wegm1"]
+[ext_resource type="AudioStream" uid="uid://1crirf73qi0q" path="res://Resource/bgm/bruh.WAV" id="14_u4udt"]
+[ext_resource type="AudioStream" uid="uid://crxqnogsw7pj2" path="res://Resource/bgm/genius.WAV" id="15_iapoq"]
+[ext_resource type="AudioStream" uid="uid://btjnrktnckxsf" path="res://Resource/bgm/nice.WAV" id="16_10h33"]
+[ext_resource type="PackedScene" uid="uid://703u4acc5wp" path="res://Entitise/Controls/AchievementControl/achievement.tscn" id="17_bef3f"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5jrnt")
 
 [node name="StartMenu" parent="." instance=ExtResource("1_v1ax1")]
 
-[node name="FSM" type="Node" parent="."]
+[node name="FSM" type="Node" parent="." groups=["Stable"]]
 script = ExtResource("2_7pxqq")
 
-[node name="Music" type="Node" parent="."]
+[node name="Music" type="Node" parent="." groups=["Stable"]]
 
 [node name="start_btn" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("4_nox6w")
@@ -50,10 +54,25 @@ stream = ExtResource("10_gh8w6")
 
 [node name="bgm" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("11_1frqi")
-autoplay = true
 
 [node name="over" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("12_qf22m")
 
 [node name="speak" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("13_wegm1")
+
+[node name="bruh" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("14_u4udt")
+volume_db = 3.0
+
+[node name="genius" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("15_iapoq")
+volume_db = 8.0
+
+[node name="nice" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("16_10h33")
+volume_db = 3.0
+
+[node name="Achievement" parent="." instance=ExtResource("17_bef3f")]
+
+[connection signal="finished" from="Music/bgm" to="." method="_on_bgm_finished"]

@@ -5,13 +5,12 @@ var begin_syn_rotation: bool = false
 
 func _process(delta: float) -> void:
 	if begin_syn_rotation:
-		get_node("left_background/player_goose").rotation = ($VScrollBar.value - 50) / 50 * PI
+		get_node("left_background/player_goose").rotation = ($RollBar.value - 50) / 50 * PI
 
 func mirror_start() -> void:
 	GOOSE = load("user://temp_goose.tscn")
 	generate_left_background()
 	call_deferred("generate_player_goose")
-	$VScrollBar.value = 50
 
 ## 生成左边的背景蒙版
 func generate_left_background() -> void:
@@ -61,6 +60,9 @@ func mirror_rotation(mirror_goose: Node2D) -> void:
 
 ## 复制操作时保存左边部分
 func save_left_body() -> void:
+	var player_goose = get_node("left_background/player_goose")
+	if player_goose.global_position.x > 4800 + 180 or player_goose.global_position.x < 4800 - 180:
+		return
 	get_node("/root/Main/Music/yes").play()
 	count_mark(get_node("left_background/player_goose"))
 	# 将两个背景clip模式变成clip_only，并将镜像角色加入到右侧背景下
@@ -135,6 +137,3 @@ func count_mark(player_goose: Node2D) -> void:
 					$"../../../UI/VBoxContainer".update($"../../..".mark.values())
 			else:
 				print(str(child) + "的Marker2D不存在")
-
-func _on_v_scroll_bar_scrolling() -> void:
-	get_node("/root/Main/Music/socalView").play()
